@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         body: TabBarView(
           controller: tabController,
           children: [
-            Center(child: Text("Home Screen")),
+            screenhome(),
             Center(child: Text("Friend Screen")),
             Center(child: Text("Messenge Screen")),
             Center(child: Text("Video Screen")),
@@ -54,6 +54,33 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             Center(child: Text("Store Screen")),
           ],
         )
+    );
+  }
+  Widget screenhome(){
+    return Column(
+        children: [
+            Flexible(
+                flex: 2,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      for(int i=0; i<30;i++)
+                        Container(width: 125,height:double.infinity,color: Colors.red, margin: EdgeInsets.only(left: 10, top: 10),)
+                    ],
+                  ),
+                )
+            ),
+            Flexible(flex: 8,child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  for(int i=0; i<30;i++)
+                    Container(width: double.infinity,height:500,color: Colors.red, margin: EdgeInsets.only(top: 10),)
+                ],
+              ),
+            ))
+        ],
     );
   }
 }
