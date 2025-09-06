@@ -1,3 +1,4 @@
+import 'package:clone_fb/UI/homePage.dart';
 import 'package:clone_fb/UI/loginPage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: loginPage(),
+      home: HomePage(),
     );
   }
 }

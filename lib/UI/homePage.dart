@@ -19,16 +19,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return  Scaffold(
         appBar: AppBar(
-          title: Text("facebook"),
+          title: Text("facebook", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
           actions: [
             Container(
                 margin: EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.grey.withOpacity(0.4)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Color.fromRGBO(158, 158, 158, 0.4)),
                 child: IconButton(onPressed: (){}, icon: Icon(Icons.search))
             ),
             Container(
                 margin: EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.grey.withOpacity(0.4)),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Color.fromRGBO(158, 158, 158, 0.4)),
                 child: IconButton(onPressed: (){}, icon: Icon(Icons.menu))
             ),
           ],
@@ -47,11 +47,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           controller: tabController,
           children: [
             Center(child: Text("Home Screen")),
-            Center(child: Text("Favorite Screen")),
-            Center(child: Text("Settings Screen")),
-            Center(child: Text("Settings Screen")),
-            Center(child: Text("Settings Screen")),
-            Center(child: Text("Settings Screen")),
+            Center(child: Text("Friend Screen")),
+            Center(child: Text("Messenge Screen")),
+            Center(child: Text("Video Screen")),
+            Center(child: Text("Notification Screen")),
+            Center(child: Text("Store Screen")),
           ],
         )
     );

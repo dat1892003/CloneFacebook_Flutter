@@ -38,40 +38,42 @@ class _loginPageState extends State<loginPage> {
               Flexible(flex: 1,child: Container( margin: EdgeInsets.only(top: 20), child: Icon(Icons.facebook, color: Colors.blueAccent,size: 100,)),),
               Flexible(
                   flex: 5,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(left: 10, right: 10, top: 50),
-                            padding: EdgeInsets.only(left: 10),
-                            decoration: BoxDecoration(border: Border.all(width: 1), borderRadius: BorderRadius.circular(15)),
-                            child: TextField(decoration: InputDecoration(labelText: "Nhập vào email hoặc số điện thoại", border: InputBorder.none),),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 10, right: 10, top: 20),
-                            padding: EdgeInsets.only(left: 10),
-                            decoration: BoxDecoration(border: Border.all(width: 1), borderRadius: BorderRadius.circular(15)),
-                            child: TextField(decoration: InputDecoration(labelText: "Nhập vào mật khẩu", border: InputBorder.none),),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 10, right: 10, top: 20),
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue,
-                                  minimumSize: Size(double.infinity, 50),
-                                ),
-                                onPressed: (){},
-                                child: Text("Đăng nhập", style: TextStyle(color: Colors.white),)
+                  child: Form(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, top: 50),
+                              padding: EdgeInsets.only(left: 10),
+                              decoration: BoxDecoration(border: Border.all(width: 1), borderRadius: BorderRadius.circular(15)),
+                              child: TextField(decoration: InputDecoration(labelText: "Nhập vào email hoặc số điện thoại", border: InputBorder.none),),
                             ),
-                          ),
-                          TextButton(onPressed: (){},style: TextButton.styleFrom(padding:EdgeInsets.only(top: 15)),
-                              child: Text("Quên mật khẩu?", style: TextStyle(color: Colors.black),))
-                        ],
-                      )
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, top: 20),
+                              padding: EdgeInsets.only(left: 10),
+                              decoration: BoxDecoration(border: Border.all(width: 1), borderRadius: BorderRadius.circular(15)),
+                              child: TextField(decoration: InputDecoration(labelText: "Nhập vào mật khẩu", border: InputBorder.none),),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, top: 20),
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    minimumSize: Size(double.infinity, 50),
+                                  ),
+                                  onPressed: (){},
+                                  child: Text("Đăng nhập", style: TextStyle(color: Colors.white),)
+                              ),
+                            ),
+                            TextButton(onPressed: (){},style: TextButton.styleFrom(padding:EdgeInsets.only(top: 15)),
+                                child: Text("Quên mật khẩu?", style: TextStyle(color: Colors.black),))
+                          ],
+                        )
 
-                    ],
+                      ],
+                    ),
                   )
               ),
               Flexible(
