@@ -66,7 +66,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   child: Row(
                     children: [
                       for(int i=0; i<30;i++)
-                        Container(width: 125,height:double.infinity,color: Colors.red, margin: EdgeInsets.only(left: 10, top: 10),)
+                        Container(
+                          width: 125,
+                          height:double.infinity, 
+                          margin: EdgeInsets.only(left: 10, top: 10), 
+                          decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+                        )
                     ],
                   ),
                 )
@@ -76,7 +84,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               child: Column(
                 children: [
                   for(int i=0; i<30;i++)
-                    Container(width: double.infinity,height:500,color: Colors.red, margin: EdgeInsets.only(top: 10),)
+                    Container(
+                      width: double.infinity,
+                      height:500, 
+                      margin: EdgeInsets.only(top: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(15)
+                      ),
+                    )
                 ],
               ),
             ))
