@@ -108,6 +108,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       scrollDirection: Axis.vertical,
       child: Column(
           children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center ,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(flex: 1,child: Icon(Icons.account_circle)),
+                Flexible(flex: 2,child: TextField()),
+                Flexible(flex: 1,child: Icon(Icons.image))
+              ],
+            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
