@@ -27,35 +27,62 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           title: Text("facebook",
               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
           actions: [
-            IconButton(
-              icon: Icon(Icons.add_box_outlined),
-              onPressed: () async {
-                final RenderBox button = context.findRenderObject() as RenderBox;
-                final RenderBox overlay = Overlay.of(context).context.findRenderObject() as RenderBox;
+          IconButton(
+            icon: Icon(Icons.add_box_outlined),
+            onPressed: () async {
+            final RenderBox button = context.findRenderObject() as RenderBox;
+            final RenderBox overlay =
+            Overlay.of(context).context.findRenderObject() as RenderBox;
+            final Offset offset = button.localToGlobal(Offset.zero, ancestor: overlay);
+            final Size size = button.size;
 
-                final result = await showMenu(
-                  context: context,
-                  position: RelativeRect.fromRect(
-                    Rect.fromPoints(
-                      button.localToGlobal(Offset.zero, ancestor: overlay),
-                      button.localToGlobal(Offset.zero, ancestor: overlay),
-                    ),
-                    Offset.zero & overlay.size,
-                  ),
-                  items: [
-                    PopupMenuItem(value: "bai_viet", child: Text("Tạo bài viết")),
-                    PopupMenuItem(value: "story", child: Text("Tạo story")),
-                    PopupMenuItem(value: "room", child: Text("Tạo phòng họp mặt")),
-                  ],
-                );
+            final double left = offset.dx + size.width / 2;
+            final double top = offset.dy - size.height * 2;
 
-                if (result != null) {
-                  print("Bạn chọn: $result");
-                }
-              },
+            final result = await showMenu(
+            context: context,
+            shape: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide(color: Colors.transparent)),
+            position: RelativeRect.fromLTRB(
+            left,       
+            top,        
+            left,       
+            0, 
             ),
+          items: [
+            PopupMenuItem(value: "bai_viet",
+                child: Row(
+                  children: [
+                    Icon(Icons.border_color_outlined),
+                    SizedBox(width: 10,),
+                    Text("Tạo bài viết")
+                  ],)
+            ),
+
+            PopupMenuItem(value: "story",
+                child: Row(
+                  children: [
+                    Icon(Icons.image),
+                    SizedBox(width: 10,),
+                    Text("Tạo story")
+                  ],)
+            ),
+            PopupMenuItem(value: "room",
+                child: Row(
+                  children: [
+                    Icon(Icons.video_camera_back_rounded),
+                    SizedBox(width: 10,),
+                    Text("Tạo phòng họp mặt")
+                  ],)
+            ),
+            ],
+          );
+
+          if (result != null) {
+            print("Bạn chọn: $result");
+          }
+          },),
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+            IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.facebookMessenger)),
           ],
           pinned: true,
           floating: true,
@@ -65,7 +92,18 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             labelColor: Colors.black,
             indicatorColor: Colors.blue,
             tabs: [
-              Tab(icon: Icon(Icons.home)),
+              Tab(
+                  icon: Stack(
+                      children: [
+                        Container(child: Icon(Icons.home)),
+                        Container(width: 10,height: 10,margin: EdgeInsets.only(left: 15),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+                            color: Colors.red,
+                          ),
+                        ),
+                      ]
+                  )
+              ),
               Tab(icon: Icon(Icons.video_library)),
               Tab(icon: Icon(Icons.store)),
               Tab(icon: Icon(Icons.group)),
@@ -108,19 +146,59 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       scrollDirection: Axis.vertical,
       child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center ,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(flex: 1,child: Icon(Icons.account_circle)),
-                Flexible(flex: 2,child: TextField()),
-                Flexible(flex: 1,child: Icon(Icons.image))
-              ],
+            Container(
+              padding: EdgeInsets.only(bottom: 10),
+              decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center ,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(flex: 1,child: Container(margin: EdgeInsets.only(right: 30),child: Icon(Icons.account_circle,size: 30,))),
+                  Flexible(flex: 2,child: Container(
+                    padding: EdgeInsets.only(left: 10),
+                    margin: EdgeInsets.only(top: 10),
+                    decoration: BoxDecoration(border: Border.all(color: Colors.black),borderRadius: BorderRadius.circular(20)),
+                      child: TextField(
+                        decoration: InputDecoration(border: InputBorder.none, labelText: "Bạn đang nghỉ gì ?"),
+                      )
+                    )
+                  ),
+                  Flexible(flex: 1,child: Container(margin: EdgeInsets.only(left: 30),child: Icon(Icons.image, color: Colors.green,size: 30,)))
+                ],
+              ),
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
+                  Container(
+                    width: 125,
+                    height:200,
+                    margin: EdgeInsets.only(left: 10, top: 10),
+                    decoration: BoxDecoration(borderRadius:BorderRadius.circular(15),color: Colors.black),
+                    child: Stack(
+                      children: [
+                        Align(
+                            alignment: AlignmentGeometry.directional(0, 1),
+                            child: Container(
+                              height:50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular(15)),
+                                  color: Colors.grey,
+                                  border: Border(
+                                      bottom: BorderSide(style: BorderStyle.none))),)),
+                        Align(
+                          alignment: AlignmentGeometry.directional(0, 0.7),
+                          child: Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.blue),
+                              child: Icon(Icons.add, color: Colors.white,)),)
+                      ],
+                    ),
+                  ),
                   for(int i=0; i<30;i++)
                     Container(
                       width: 125,
