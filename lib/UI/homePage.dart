@@ -17,45 +17,92 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   }
 
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-          title: Text("facebook", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
+    return Scaffold(body: buildNestedScrollView());
+  }
+
+  NestedScrollView buildNestedScrollView() {
+    return NestedScrollView(
+      headerSliverBuilder: (context, innerBoxIsScrolled) => [
+        SliverAppBar(
+          title: Text("facebook",
+              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
           actions: [
-            Container(
-                margin: EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Color.fromRGBO(158, 158, 158, 0.4)),
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.search))
+            IconButton(
+              icon: Icon(Icons.add_box_outlined),
+              onPressed: () async {
+                final RenderBox button = context.findRenderObject() as RenderBox;
+                final RenderBox overlay = Overlay.of(context).context.findRenderObject() as RenderBox;
+
+                final result = await showMenu(
+                  context: context,
+                  position: RelativeRect.fromRect(
+                    Rect.fromPoints(
+                      button.localToGlobal(Offset.zero, ancestor: overlay),
+                      button.localToGlobal(Offset.zero, ancestor: overlay),
+                    ),
+                    Offset.zero & overlay.size,
+                  ),
+                  items: [
+                    PopupMenuItem(value: "bai_viet", child: Text("Tạo bài viết")),
+                    PopupMenuItem(value: "story", child: Text("Tạo story")),
+                    PopupMenuItem(value: "room", child: Text("Tạo phòng họp mặt")),
+                  ],
+                );
+
+                if (result != null) {
+                  print("Bạn chọn: $result");
+                }
+              },
             ),
-            Container(
-                margin: EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Color.fromRGBO(158, 158, 158, 0.4)),
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.menu))
-            ),
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
           ],
+          pinned: true,
+          floating: true,
+          snap: true,
           bottom: TabBar(
-              controller: tabController,
-              tabs: [
-                Tab(icon: Icon(Icons.home),),
-                Tab(icon: Icon(Icons.group),),
-                Tab(icon: Icon(FontAwesomeIcons.facebookMessenger),),
-                Tab(icon: Icon(Icons.video_library)),
-                Tab(icon: Icon(Icons.notifications)),
-                Tab(icon: Icon(Icons.storefront)),
-              ]) ,
+            controller: tabController,
+            labelColor: Colors.black,
+            indicatorColor: Colors.blue,
+            tabs: [
+              Tab(icon: Icon(Icons.home)),
+              Tab(icon: Icon(Icons.video_library)),
+              Tab(icon: Icon(Icons.store)),
+              Tab(icon: Icon(Icons.group)),
+              Tab(icon: Icon(Icons.notifications)),
+              Tab(icon: Icon(Icons.menu)),
+            ],
+          ),
         ),
-        body: TabBarView(
-          controller: tabController,
-          children: [
-            screenhome(),
-            Center(child: Text("Friend Screen")),
-            Center(child: Text("Messenge Screen")),
-            Center(child: Text("Video Screen")),
-            Center(child: Text("Notification Screen")),
-            Center(child: Text("Store Screen")),
-          ],
-        )
+      ],
+      body: TabBarView(
+        controller: tabController,
+        children: [
+          screenhome(),
+          Center(child: Text("Friend Screen")),
+          Center(child: Text("Messenge Screen")),
+          Center(child: Text("Video Screen")),
+          Center(child: Text("Notification Screen")),
+          Center(child: Text("Store Screen")),
+        ],
+      ),
     );
   }
+
+  TabBarView buildTabBarView() {
+    return TabBarView(
+        controller: tabController,
+        children: [
+          screenhome(),
+          Center(child: Text("Friend Screen")),
+          Center(child: Text("Messenge Screen")),
+          Center(child: Text("Video Screen")),
+          Center(child: Text("Notification Screen")),
+          Center(child: Text("Store Screen")),
+        ],
+      );
+  }
+  
   Widget screenhome(){
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
