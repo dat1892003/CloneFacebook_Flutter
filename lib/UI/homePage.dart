@@ -57,46 +57,46 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     );
   }
   Widget screenhome(){
-    return Column(
-        children: [
-            Flexible(
-                flex: 2,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for(int i=0; i<30;i++)
-                        Container(
-                          width: 125,
-                          height:double.infinity, 
-                          margin: EdgeInsets.only(left: 10, top: 10), 
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(15)
-                          ),
-                        )
-                    ],
-                  ),
-                )
-            ),
-            Flexible(flex: 8,child: SingleChildScrollView(
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  for(int i=0; i<30;i++)
+                    Container(
+                      width: 125,
+                      height:200,
+                      margin: EdgeInsets.only(left: 10, top: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15)
+                      ),
+                    )
+                ],
+              ),
+              ),
+            SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
                   for(int i=0; i<30;i++)
                     Container(
                       width: double.infinity,
-                      height:500, 
+                      height:500,
                       margin: EdgeInsets.only(top: 10),
                       decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(15)
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(15)
                       ),
                     )
                 ],
               ),
-            ))
-        ],
+            )
+          ],
+      ),
     );
   }
 }
