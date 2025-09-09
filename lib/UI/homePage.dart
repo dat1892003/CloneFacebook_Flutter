@@ -207,7 +207,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       decoration: BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.circular(15),
-                          i
+                          image: DecorationImage(image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDB1hO8FqRaZVH7KowcauXAU9k5Moyt8xLQ&s"), fit: BoxFit.cover)
                       ),
                       child: Align(
                         alignment: AlignmentGeometry.directional(-0.9, -0.9 ),
@@ -217,12 +217,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                           decoration: BoxDecoration(
                             shape: BoxShape.circle, // hình tròn
                             border: Border.all(
-                              color: Colors.red,
+                              color: Colors.blue,
                               width: 3,
                             ),
                             color: Colors.transparent, // rỗng ruột
                           ),
-                          child: Icon(Icons.account_circle, size: 40,),
+                          child: Icon(Icons.account_circle, size: 40, color: Colors.white,),
                         ),
                       ),
                     )
