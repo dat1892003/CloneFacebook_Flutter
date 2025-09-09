@@ -205,7 +205,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       height:200,
                       margin: EdgeInsets.only(left: 10, top: 10),
                       decoration: BoxDecoration(
-                          color: Colors.blue,
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDB1hO8FqRaZVH7KowcauXAU9k5Moyt8xLQ&s"), fit: BoxFit.cover)
                       ),
@@ -240,7 +239,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       margin: EdgeInsets.only(top: 10),
                       decoration: BoxDecoration(
                           color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15)
                       ),
                     )
                 ],
