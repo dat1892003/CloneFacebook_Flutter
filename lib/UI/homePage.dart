@@ -206,7 +206,24 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       margin: EdgeInsets.only(left: 10, top: 10),
                       decoration: BoxDecoration(
                           color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15)
+                          borderRadius: BorderRadius.circular(15),
+                          i
+                      ),
+                      child: Align(
+                        alignment: AlignmentGeometry.directional(-0.9, -0.9 ),
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle, // hình tròn
+                            border: Border.all(
+                              color: Colors.red,
+                              width: 3,
+                            ),
+                            color: Colors.transparent, // rỗng ruột
+                          ),
+                          child: Icon(Icons.account_circle, size: 40,),
+                        ),
                       ),
                     )
                 ],
