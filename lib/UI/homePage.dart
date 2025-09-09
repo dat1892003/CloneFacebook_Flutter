@@ -240,6 +240,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       decoration: BoxDecoration(
                           color: Colors.blue,
                       ),
+                      child: Column(
+                        children: [
+
+                        ],
+                      ),
                     )
                 ],
               ),
