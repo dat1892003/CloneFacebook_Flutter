@@ -242,29 +242,36 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                         border: Border(bottom: BorderSide(width: 1), top:BorderSide(width: 1))
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          SizedBox(height: 10,),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.account_circle,size: 50,),
-                              Container(
-                                margin: EdgeInsets.only(left: 10),
-                                child: Column(
-                                  children: [
-                                    Text("Người dùng"),
-                                    Container(
-                                      child: Row(
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Icon(Icons.account_circle)
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                        Text("Người dùng"),
+                                      Row(
                                         children: [
                                           Text("12 phút"),
-                                          Container(margin: EdgeInsets.only(left: 10),child: Icon(FontAwesomeIcons.earthAmericas))
+                                          Icon(FontAwesomeIcons.earthAmericas)
                                         ],
-                                      ),
-                                    )
-                                  ],
-                                ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz)),
+                                ],
                               )
-
                             ],
                           )
                         ],
