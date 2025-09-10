@@ -238,11 +238,35 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       height:500,
                       margin: EdgeInsets.only(top: 10),
                       decoration: BoxDecoration(
-                          color: Colors.blue,
+                        color: Colors.white60,
+                        border: Border(bottom: BorderSide(width: 1), top:BorderSide(width: 1))
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
+                          SizedBox(height: 10,),
+                          Row(
+                            children: [
+                              Icon(Icons.account_circle,size: 50,),
+                              Container(
+                                margin: EdgeInsets.only(left: 10),
+                                child: Column(
+                                  children: [
+                                    Text("Người dùng"),
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Text("12 phút"),
+                                          Container(margin: EdgeInsets.only(left: 10),child: Icon(FontAwesomeIcons.earthAmericas))
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )
 
+                            ],
+                          )
                         ],
                       ),
                     )
