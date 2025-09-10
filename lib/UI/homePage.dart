@@ -243,37 +243,49 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       ),
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      Icon(Icons.account_circle)
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                        Text("Người dùng"),
-                                      Row(
-                                        children: [
-                                          Text("12 phút"),
-                                          Icon(FontAwesomeIcons.earthAmericas)
-                                        ],
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz)),
-                                ],
-                              )
-                            ],
-                          )
+                          SizedBox(height: 10,),
+                          Flexible(
+                            flex: 1,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(margin: EdgeInsets.only(left: 10),child: Icon(Icons.account_circle, size: 50,))
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                          Text("Người dùng"),
+                                          SizedBox(height: 5,),
+                                        Row(
+                                          children: [
+                                            Text("12 phút"),
+                                            SizedBox(width: 10,),
+                                            Icon(FontAwesomeIcons.earthAmericas)
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz)),
+                                    IconButton(onPressed: (){}, icon: Icon(Icons.close))
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Flexible(flex: 5,child: Image(image: NetworkImage("https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg"),)),
+                          Flexible(flex: 1,child: Row(
+                            children: [],
+                          ))
                         ],
                       ),
                     )
