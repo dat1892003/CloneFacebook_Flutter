@@ -8,7 +8,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
   @override
   void initState() {
@@ -25,64 +26,80 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       headerSliverBuilder: (context, innerBoxIsScrolled) => [
         SliverAppBar(
           title: Text("facebook",
-              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+              style:
+                  TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
           actions: [
-          IconButton(
-            icon: Icon(Icons.add_box_outlined),
-            onPressed: () async {
-            final RenderBox button = context.findRenderObject() as RenderBox;
-            final RenderBox overlay =
-            Overlay.of(context).context.findRenderObject() as RenderBox;
-            final Offset offset = button.localToGlobal(Offset.zero, ancestor: overlay);
-            final Size size = button.size;
+            IconButton(
+              icon: Icon(Icons.add_box_outlined),
+              onPressed: () async {
+                final RenderBox button =
+                    context.findRenderObject() as RenderBox;
+                final RenderBox overlay =
+                    Overlay.of(context).context.findRenderObject() as RenderBox;
+                final Offset offset =
+                    button.localToGlobal(Offset.zero, ancestor: overlay);
+                final Size size = button.size;
 
-            final double left = offset.dx + size.width / 2;
-            final double top = offset.dy - size.height * 2;
+                final double left = offset.dx + size.width / 2;
+                final double top = offset.dy - size.height * 2;
 
-            final result = await showMenu(
-            context: context,
-            shape: OutlineInputBorder(borderRadius: BorderRadius.circular(15), borderSide: BorderSide(color: Colors.transparent)),
-            position: RelativeRect.fromLTRB(
-            left,       
-            top,        
-            left,       
-            0, 
-            ),
-          items: [
-            PopupMenuItem(value: "bai_viet",
-                child: Row(
-                  children: [
-                    Icon(Icons.border_color_outlined),
-                    SizedBox(width: 10,),
-                    Text("Tạo bài viết")
-                  ],)
-            ),
+                final result = await showMenu(
+                  context: context,
+                  shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.transparent)),
+                  position: RelativeRect.fromLTRB(
+                    left,
+                    top,
+                    left,
+                    0,
+                  ),
+                  items: [
+                    PopupMenuItem(
+                        value: "bai_viet",
+                        child: Row(
+                          children: [
+                            Icon(Icons.border_color_outlined),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("Tạo bài viết")
+                          ],
+                        )),
+                    PopupMenuItem(
+                        value: "story",
+                        child: Row(
+                          children: [
+                            Icon(Icons.image),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("Tạo story")
+                          ],
+                        )),
+                    PopupMenuItem(
+                        value: "room",
+                        child: Row(
+                          children: [
+                            Icon(Icons.video_camera_back_rounded),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text("Tạo phòng họp mặt")
+                          ],
+                        )),
+                  ],
+                );
 
-            PopupMenuItem(value: "story",
-                child: Row(
-                  children: [
-                    Icon(Icons.image),
-                    SizedBox(width: 10,),
-                    Text("Tạo story")
-                  ],)
+                if (result != null) {
+                  print("Bạn chọn: $result");
+                }
+              },
             ),
-            PopupMenuItem(value: "room",
-                child: Row(
-                  children: [
-                    Icon(Icons.video_camera_back_rounded),
-                    SizedBox(width: 10,),
-                    Text("Tạo phòng họp mặt")
-                  ],)
-            ),
-            ],
-          );
-
-          if (result != null) {
-            print("Bạn chọn: $result");
-          }
-          },),
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.facebookMessenger)),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(FontAwesomeIcons.facebookMessenger)),
           ],
           pinned: true,
           floating: true,
@@ -93,17 +110,18 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             indicatorColor: Colors.blue,
             tabs: [
               Tab(
-                  icon: Stack(
-                      children: [
-                        Container(child: Icon(Icons.home)),
-                        Container(width: 10,height: 10,margin: EdgeInsets.only(left: 15),
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-                            color: Colors.red,
-                          ),
-                        ),
-                      ]
-                  )
-              ),
+                  icon: Stack(children: [
+                Container(child: Icon(Icons.home)),
+                Container(
+                  width: 10,
+                  height: 10,
+                  margin: EdgeInsets.only(left: 15),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.red,
+                  ),
+                ),
+              ])),
               Tab(icon: Icon(Icons.video_library)),
               Tab(icon: Icon(Icons.store)),
               Tab(icon: Icon(Icons.group)),
@@ -129,170 +147,248 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   TabBarView buildTabBarView() {
     return TabBarView(
-        controller: tabController,
-        children: [
-          screenhome(),
-          Center(child: Text("Friend Screen")),
-          Center(child: Text("Messenge Screen")),
-          Center(child: Text("Video Screen")),
-          Center(child: Text("Notification Screen")),
-          Center(child: Text("Store Screen")),
-        ],
-      );
+      controller: tabController,
+      children: [
+        screenhome(),
+        Center(child: Text("Friend Screen")),
+        Center(child: Text("Messenge Screen")),
+        Center(child: Text("Video Screen")),
+        Center(child: Text("Notification Screen")),
+        Center(child: Text("Store Screen")),
+      ],
+    );
   }
-  
-  Widget screenhome(){
+
+  Widget screenhome() {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(bottom: 10),
-              decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center ,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(flex: 1,child: Container(margin: EdgeInsets.only(right: 30),child: Icon(Icons.account_circle,size: 30,))),
-                  Flexible(flex: 2,child: Container(
-                    padding: EdgeInsets.only(left: 10),
-                    margin: EdgeInsets.only(top: 10),
-                    decoration: BoxDecoration(border: Border.all(color: Colors.black),borderRadius: BorderRadius.circular(20)),
-                      child: TextField(
-                        decoration: InputDecoration(border: InputBorder.none, labelText: "Bạn đang nghỉ gì ?"),
-                      )
-                    )
-                  ),
-                  Flexible(flex: 1,child: Container(margin: EdgeInsets.only(left: 30),child: Icon(Icons.image, color: Colors.green,size: 30,)))
-                ],
-              ),
+        children: [
+          Container(
+            padding: EdgeInsets.only(bottom: 10),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                    flex: 1,
+                    child: Container(
+                        margin: EdgeInsets.only(right: 30),
+                        child: Icon(
+                          Icons.account_circle,
+                          size: 30,
+                        ))),
+                Flexible(
+                    flex: 2,
+                    child: Container(
+                        padding: EdgeInsets.only(left: 10),
+                        margin: EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              labelText: "Bạn đang nghỉ gì ?"),
+                        ))),
+                Flexible(
+                    flex: 1,
+                    child: Container(
+                        margin: EdgeInsets.only(left: 30),
+                        child: Icon(
+                          Icons.image,
+                          color: Colors.green,
+                          size: 30,
+                        )))
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                Container(
+                  width: 125,
+                  height: 200,
+                  margin: EdgeInsets.only(left: 10, top: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.black),
+                  child: Stack(
+                    children: [
+                      Align(
+                          alignment: AlignmentGeometry.directional(0, 1),
+                          child: Container(
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    bottomRight: Radius.circular(15),
+                                    bottomLeft: Radius.circular(15)),
+                                color: Colors.grey,
+                                border: Border(
+                                    bottom:
+                                        BorderSide(style: BorderStyle.none))),
+                          )),
+                      Align(
+                        alignment: AlignmentGeometry.directional(0, 0.7),
+                        child: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.blue),
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            )),
+                      )
+                    ],
+                  ),
+                ),
+                for (int i = 0; i < 30; i++)
                   Container(
                     width: 125,
-                    height:200,
+                    height: 200,
                     margin: EdgeInsets.only(left: 10, top: 10),
-                    decoration: BoxDecoration(borderRadius:BorderRadius.circular(15),color: Colors.black),
-                    child: Stack(
-                      children: [
-                        Align(
-                            alignment: AlignmentGeometry.directional(0, 1),
-                            child: Container(
-                              height:50,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular(15)),
-                                  color: Colors.grey,
-                                  border: Border(
-                                      bottom: BorderSide(style: BorderStyle.none))),)),
-                        Align(
-                          alignment: AlignmentGeometry.directional(0, 0.7),
-                          child: Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.blue),
-                              child: Icon(Icons.add, color: Colors.white,)),)
-                      ],
-                    ),
-                  ),
-                  for(int i=0; i<30;i++)
-                    Container(
-                      width: 125,
-                      height:200,
-                      margin: EdgeInsets.only(left: 10, top: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDB1hO8FqRaZVH7KowcauXAU9k5Moyt8xLQ&s"), fit: BoxFit.cover)
-                      ),
-                      child: Align(
-                        alignment: AlignmentGeometry.directional(-0.9, -0.9 ),
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle, // hình tròn
-                            border: Border.all(
-                              color: Colors.blue,
-                              width: 3,
-                            ),
-                            color: Colors.transparent, // rỗng ruột
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDB1hO8FqRaZVH7KowcauXAU9k5Moyt8xLQ&s"),
+                            fit: BoxFit.cover)),
+                    child: Align(
+                      alignment: AlignmentGeometry.directional(-0.9, -0.9),
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle, // hình tròn
+                          border: Border.all(
+                            color: Colors.blue,
+                            width: 3,
                           ),
-                          child: Icon(Icons.account_circle, size: 40, color: Colors.white,),
+                          color: Colors.transparent, // rỗng ruột
+                        ),
+                        child: Icon(
+                          Icons.account_circle,
+                          size: 40,
+                          color: Colors.white,
                         ),
                       ),
-                    )
-                ],
-              ),
-              ),
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  for(int i=0; i<30;i++)
-                    Container(
-                      width: double.infinity,
-                      height:500,
-                      margin: EdgeInsets.only(top: 10),
-                      decoration: BoxDecoration(
+                    ),
+                  )
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                for (int i = 0; i < 30; i++)
+                  Container(
+                    width: double.infinity,
+                    height: 500,
+                    margin: EdgeInsets.only(top: 10),
+                    decoration: BoxDecoration(
                         color: Colors.white60,
-                        border: Border(bottom: BorderSide(width: 1), top:BorderSide(width: 1))
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 10,),
-                          Flexible(
+                        border: Border(
+                            bottom: BorderSide(width: 1),
+                            top: BorderSide(width: 1))),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Flexible(
+                          flex: 1,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Container(
+                                          margin: EdgeInsets.only(left: 10),
+                                          child: Icon(
+                                            Icons.account_circle,
+                                            size: 50,
+                                          ))
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Người dùng"),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text("12 phút"),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Icon(FontAwesomeIcons.earthAmericas)
+                                        ],
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(Icons.more_horiz)),
+                                  IconButton(
+                                      onPressed: () {}, icon: Icon(Icons.close))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        Flexible(
+                            flex: 5,
+                            child: Image(
+                              image: NetworkImage(
+                                  "https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg"),
+                              fit: BoxFit.cover,
+                            )),
+                        Divider(),
+                        Flexible(
                             flex: 1,
+                            fit: FlexFit.loose,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Container(margin: EdgeInsets.only(left: 10),child: Icon(Icons.account_circle, size: 50,))
-                                      ],
-                                    ),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                          Text("Người dùng"),
-                                          SizedBox(height: 5,),
-                                        Row(
-                                          children: [
-                                            Text("12 phút"),
-                                            SizedBox(width: 10,),
-                                            Icon(FontAwesomeIcons.earthAmericas)
-                                          ],
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz)),
-                                    IconButton(onPressed: (){}, icon: Icon(Icons.close))
-                                  ],
-                                )
+                                SizedBox(),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.favorite)),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(FontAwesomeIcons.comment)),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(FontAwesomeIcons.share)),
+                                SizedBox()
                               ],
-                            ),
-                          ),
-                          Flexible(flex: 5,child: Image(image: NetworkImage("https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg"),)),
-                          Flexible(flex: 1,child: Row(
-                            children: [],
-                          ))
-                        ],
-                      ),
-                    )
-                ],
-              ),
-            )
-          ],
+                            )),
+                        SizedBox(),
+                      ],
+                    ),
+                  )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
