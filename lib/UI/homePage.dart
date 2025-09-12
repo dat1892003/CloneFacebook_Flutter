@@ -376,12 +376,18 @@ class _HomePageState extends State<HomePage>
                                     Text("Yêu thích")
                                   ],
                                 )),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(FontAwesomeIcons.comment)),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(FontAwesomeIcons.share)),
+                                TextButton(onPressed: (){}, child: Row(
+                                  children: [
+                                    Icon(FontAwesomeIcons.comment),
+                                    Text("Bình luận")
+                                  ],
+                                )),
+                                TextButton(onPressed: (){}, child: Row(
+                                  children: [
+                                    Icon(FontAwesomeIcons.share),
+                                    Text("Chia sẻ")
+                                  ],
+                                )),
                                 SizedBox()
                               ],
                             )),
