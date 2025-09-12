@@ -362,7 +362,6 @@ class _HomePageState extends State<HomePage>
                                   "https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg"),
                               fit: BoxFit.cover,
                             )),
-                        Divider(),
                         Flexible(
                             flex: 1,
                             fit: FlexFit.loose,
@@ -371,9 +370,10 @@ class _HomePageState extends State<HomePage>
                               children: [
                                 SizedBox(),
                                 TextButton(onPressed: (){}, child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
                                     Icon(Icons.favorite),
-                                    Text("Yêu thích")
+                                    Container(margin: EdgeInsets.only(left: 5),child: Text("Yêu thích"))
                                   ],
                                 )),
                                 TextButton(onPressed: (){}, child: Row(
