@@ -300,58 +300,58 @@ class _HomePageState extends State<HomePage>
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Flexible(
-                          flex: 1,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      Container(
-                                          margin: EdgeInsets.only(left: 10),
-                                          child: Icon(
-                                            Icons.account_circle,
-                                            size: 50,
-                                          ))
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text("Người dùng"),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text("12 phút"),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Icon(FontAwesomeIcons.earthAmericas)
-                                        ],
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(Icons.more_horiz)),
-                                  IconButton(
-                                      onPressed: () {}, icon: Icon(Icons.close))
-                                ],
-                              )
-                            ],
+                        Container(
+                          margin: EdgeInsets.only(top: 15),
+                          child: Flexible(
+                            flex: 1,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Container(
+                                            margin: EdgeInsets.only(left: 10),
+                                            child: Icon(
+                                              Icons.account_circle,
+                                              size: 50,
+                                            ))
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Người dùng"),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text("12 phút"),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Icon(FontAwesomeIcons.earthAmericas)
+                                          ],
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.more_horiz)),
+                                    IconButton(
+                                        onPressed: () {}, icon: Icon(Icons.close))
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         Flexible(
@@ -372,20 +372,21 @@ class _HomePageState extends State<HomePage>
                                 TextButton(onPressed: (){}, child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    Icon(Icons.favorite),
-                                    Container(margin: EdgeInsets.only(left: 5),child: Text("Yêu thích"))
+                                    Icon(Icons.favorite,color: Colors.black,),
+                                    Container(margin: EdgeInsets.only(left: 5),child: Text("Yêu thích", style: TextStyle(color: Colors.black),))
                                   ],
                                 )),
                                 TextButton(onPressed: (){}, child: Row(
                                   children: [
-                                    Icon(FontAwesomeIcons.comment),
-                                    Text("Bình luận")
+                                    Icon(FontAwesomeIcons.comment, color: Colors.black,),
+                                    Container(margin: EdgeInsets.only(left: 5),child: Text("Bình luận",style: TextStyle(color: Colors.black),))
                                   ],
-                                )),
+                                ),
+                                ),
                                 TextButton(onPressed: (){}, child: Row(
                                   children: [
-                                    Icon(FontAwesomeIcons.share),
-                                    Text("Chia sẻ")
+                                    Icon(FontAwesomeIcons.share,color: Colors.black,),
+                                    Container(margin: EdgeInsets.only(left: 5), child: Text("Chia sẻ", style: TextStyle(color: Colors.black),))
                                   ],
                                 )),
                                 SizedBox()
