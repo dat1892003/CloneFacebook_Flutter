@@ -370,9 +370,12 @@ class _HomePageState extends State<HomePage>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.favorite)),
+                                TextButton(onPressed: (){}, child: Row(
+                                  children: [
+                                    Icon(Icons.favorite),
+                                    Text("Yêu thích")
+                                  ],
+                                )),
                                 IconButton(
                                     onPressed: () {},
                                     icon: Icon(FontAwesomeIcons.comment)),
