@@ -369,7 +369,7 @@ class _HomePageState extends State<HomePage>
                                 TextButton(onPressed: (){}, child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                                   children: [
-                                    Icon(Icons.favorite,color: Colors.black,),
+                                    Icon(Icons.favorite,color: Colors.red,),
                                     Container(margin: EdgeInsets.only(left: 5),child: Text("Yêu thích", style: TextStyle(color: Colors.black),))
                                   ],
                                 )),
@@ -405,8 +405,23 @@ class _HomePageState extends State<HomePage>
                                                     itemBuilder: (context, index) {
                                                       return ListTile(
                                                         leading: CircleAvatar(child: Icon(Icons.account_circle)),
-                                                        title: Text("Bình luận số $index"),
-                                                        subtitle: Text("Nội dung bình luận ở đây..."),
+                                                        title: Text("Bình luận số ${index+1}"),
+                                                        subtitle: Column(
+                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                              children: [
+                                                                  Text("Nội dung bình luận ở đây..."),
+                                                                Row(
+                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                  children: [
+                                                                    Container(margin: EdgeInsets.only(top: 5),child: Text("Thích",style: TextStyle(fontSize: 12,color: Colors.grey[700]))),
+                                                                    SizedBox(width: 10,),
+                                                                    Container(margin: EdgeInsets.only(top: 5),child: Text("Trả lời",style: TextStyle(fontSize: 12,color: Colors.grey[700]),)),
+                                                                    Spacer(),
+                                                                    IconButton(onPressed: (){}, icon: Icon(Icons.favorite, color: Colors.red,))
+                                                                  ],
+                                                                )
+                                                              ],
+                                                            ),
                                                       );
                                                     },
                                                   ),
@@ -415,7 +430,20 @@ class _HomePageState extends State<HomePage>
                                                   children: [
                                                     Divider(color: Colors.black,),
                                                     Row(
-                                                      children: [],
+                                                      children: [
+                                                        Expanded(
+                                                          child: Container(
+                                                            decoration: BoxDecoration(
+                                                              borderRadius: BorderRadiusGeometry.circular(20),
+                                                              border: Border.all(color: Colors.black, width: 1)
+                                                            ),
+                                                            padding: EdgeInsets.only(left: 10),
+                                                            child: TextField(
+                                                              decoration: InputDecoration(border: InputBorder.none, labelText: "Viết bình luận ..."),
+                                                            ),
+                                                          ),
+                                                        )
+                                                      ],
                                                     ),
                                                     Row(
                                                       children: [
@@ -423,7 +451,8 @@ class _HomePageState extends State<HomePage>
                                                         IconButton(onPressed: (){}, icon: Icon(Icons.gif_box_outlined)),
                                                         IconButton(onPressed: (){}, icon: Icon(Icons.insert_emoticon)),
                                                         IconButton(onPressed: (){}, icon: Icon(Icons.share)),
-                                                        Padding(padding: EdgeInsetsGeometry.directional(start: 200),child: IconButton(onPressed: (){}, icon: Icon(Icons.send)),)
+                                                        Spacer(),
+                                                        IconButton(onPressed: (){}, icon: Icon(Icons.send))
                                                       ],
                                                     )
                                                   ],
@@ -434,7 +463,7 @@ class _HomePageState extends State<HomePage>
                                         );
                                   });
                                   }, child: Row(
-                                  children: [
+                                   children: [
                                     Icon(FontAwesomeIcons.comment, color: Colors.black,),
                                     Container(margin: EdgeInsets.only(left: 5),child: Text("Bình luận",style: TextStyle(color: Colors.black),))
                                   ],
@@ -442,7 +471,7 @@ class _HomePageState extends State<HomePage>
                                 ),
                                 TextButton(onPressed: (){}, child: Row(
                                   children: [
-                                    Icon(FontAwesomeIcons.share,color: Colors.black,),
+                                    Icon(FontAwesomeIcons.share,color: Colors.blue,),
                                     Container(margin: EdgeInsets.only(left: 5), child: Text("Chia sẻ", style: TextStyle(color: Colors.black),))
                                   ],
                                 )),
