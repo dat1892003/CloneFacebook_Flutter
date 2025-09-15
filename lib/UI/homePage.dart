@@ -464,7 +464,7 @@ class _HomePageState extends State<HomePage>
                                   });
                                   }, child: Row(
                                    children: [
-                                    Icon(FontAwesomeIcons.comment, color: Colors.black,),
+                                    Icon(FontAwesomeIcons.comment, color: Colors.blue,),
                                     Container(margin: EdgeInsets.only(left: 5),child: Text("Bình luận",style: TextStyle(color: Colors.black),))
                                   ],
                                 ),
