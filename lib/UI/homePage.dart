@@ -302,9 +302,7 @@ class _HomePageState extends State<HomePage>
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: 15),
-                          child: Flexible(
-                            flex: 1,
-                            child: Row(
+                          child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -352,20 +350,19 @@ class _HomePageState extends State<HomePage>
                                 )
                               ],
                             ),
-                          ),
                         ),
-                        Flexible(
-                            flex: 5,
-                            fit: FlexFit.loose,
+                        SizedBox(height: 10,),
+                        Container( margin: EdgeInsets.only(left: 10),
+                          child: Text("Đây là đoạn văn bản có thể thu gọn lại, bạn có thể kích vào để hiển thị thêm văn bản đã đc ẩn",maxLines: 1,overflow: TextOverflow.ellipsis)),
+                        SizedBox(height: 10,),
+                        Expanded(
                             child: Image(
                               image: NetworkImage(
                                   "https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg"),
                               fit: BoxFit.cover,
                             )),
-                        Flexible(
-                            flex: 1,
-                            fit: FlexFit.loose,
-                            child: Row(
+                        SizedBox(height: 10,),
+                        Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(),
@@ -391,8 +388,8 @@ class _HomePageState extends State<HomePage>
                                 )),
                                 SizedBox()
                               ],
-                            )),
-                        SizedBox(),
+                            ),
+                        SizedBox(height: 5,),
                       ],
                     ),
                   )
