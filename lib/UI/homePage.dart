@@ -411,10 +411,20 @@ class _HomePageState extends State<HomePage>
                                                     },
                                                   ),
                                                 ),
-                                                Row(
+                                                Column(
                                                   children: [
-                                                    Container(
-                                                      child: Icon(Icons.account_circle),
+                                                    Divider(color: Colors.black,),
+                                                    Row(
+                                                      children: [],
+                                                    ),
+                                                    Row(
+                                                      children: [
+                                                        IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt)),
+                                                        IconButton(onPressed: (){}, icon: Icon(Icons.gif_box_outlined)),
+                                                        IconButton(onPressed: (){}, icon: Icon(Icons.insert_emoticon)),
+                                                        IconButton(onPressed: (){}, icon: Icon(Icons.share)),
+                                                        Padding(padding: EdgeInsetsGeometry.directional(start: 200),child: IconButton(onPressed: (){}, icon: Icon(Icons.send)),)
+                                                      ],
                                                     )
                                                   ],
                                                 ),
