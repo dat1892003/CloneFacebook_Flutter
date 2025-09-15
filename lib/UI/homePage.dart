@@ -373,7 +373,57 @@ class _HomePageState extends State<HomePage>
                                     Container(margin: EdgeInsets.only(left: 5),child: Text("Yêu thích", style: TextStyle(color: Colors.black),))
                                   ],
                                 )),
-                                TextButton(onPressed: (){}, child: Row(
+                                TextButton(onPressed: (){
+                                  showModalBottomSheet(context: context,
+                                      backgroundColor: Colors.white,
+                                      isScrollControlled: true,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadiusGeometry.circular(15)
+                                      ),
+                                      builder: (context){
+                                        return DraggableScrollableSheet(
+                                          expand: true,
+                                          initialChildSize: 1,
+                                          minChildSize: 0.8,
+                                          maxChildSize: 1,
+                                          builder: (context,scroll){
+                                            return Column(
+                                              children: [
+                                                Container(
+                                                  margin: EdgeInsets.symmetric(vertical: 8),
+                                                  height: 5,
+                                                  width: 50,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.grey[400],
+                                                    borderRadius: BorderRadius.circular(10),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: ListView.builder(
+                                                    controller: scroll,
+                                                    itemCount: 20,
+                                                    itemBuilder: (context, index) {
+                                                      return ListTile(
+                                                        leading: CircleAvatar(child: Icon(Icons.account_circle)),
+                                                        title: Text("Bình luận số $index"),
+                                                        subtitle: Text("Nội dung bình luận ở đây..."),
+                                                      );
+                                                    },
+                                                  ),
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Container(
+                                                      child: Icon(Icons.account_circle),
+                                                    )
+                                                  ],
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                  });
+                                  }, child: Row(
                                   children: [
                                     Icon(FontAwesomeIcons.comment, color: Colors.black,),
                                     Container(margin: EdgeInsets.only(left: 5),child: Text("Bình luận",style: TextStyle(color: Colors.black),))
