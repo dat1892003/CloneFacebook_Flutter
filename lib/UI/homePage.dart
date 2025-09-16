@@ -366,13 +366,7 @@ class _HomePageState extends State<HomePage>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 SizedBox(),
-                                TextButton(onPressed: (){}, child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Icon(Icons.favorite,color: Colors.red,),
-                                    Container(margin: EdgeInsets.only(left: 5),child: Text("Yêu thích", style: TextStyle(color: Colors.black),))
-                                  ],
-                                )),
+
                                 TextButton(onPressed: (){
                                   showModalBottomSheet(context: context,
                                       backgroundColor: Colors.white,
