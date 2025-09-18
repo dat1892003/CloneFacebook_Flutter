@@ -91,9 +91,6 @@ class _HomePageState extends State<HomePage>
                   ],
                 );
 
-                if (result != null) {
-                  print("Bạn chọn: $result");
-                }
               },
             ),
             IconButton(onPressed: () {}, icon: Icon(Icons.search)),
