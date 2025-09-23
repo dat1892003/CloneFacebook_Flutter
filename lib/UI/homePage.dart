@@ -174,7 +174,16 @@ class _HomePageState extends State<HomePage>
                       Icon(Icons.forward_10, color: Colors.white,)
                     ],
                   ),
-                )
+                ),
+                Align(alignment: AlignmentGeometry.directional(1, -1),child: Container(child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(Icons.favorite, color: Colors.red,),
+                    Icon(Icons.comment, color: Colors.white,),
+                    Icon(FontAwesomeIcons.share),
+                    Icon(Icons.more_horiz)
+                  ],
+                ),)),
               ],
             ),
           ),
