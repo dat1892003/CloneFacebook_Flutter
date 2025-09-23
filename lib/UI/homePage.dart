@@ -157,13 +157,24 @@ class _HomePageState extends State<HomePage>
                     margin: EdgeInsetsGeometry.directional(top: 10),
                     child: Row(
                       children: [
+                        ElevatedButton(onPressed: (){}, child: Text("Dành cho bạn")),
                         ElevatedButton(onPressed: (){}, child: Text("Khám phá")),
                         Spacer(),
                         Container(child: Icon(Icons.find_in_page_outlined),),
                         CircleAvatar(child: Icon(Icons.account_circle),backgroundColor: Colors.grey,)
                   ],
-                )
                 ),
+                ),
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.replay_10, color: Colors.white,),
+                      Icon(Icons.play_arrow, color: Colors.white,),
+                      Icon(Icons.forward_10, color: Colors.white,)
+                    ],
+                  ),
+                )
               ],
             ),
           ),
