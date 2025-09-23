@@ -147,18 +147,23 @@ class _HomePageState extends State<HomePage>
 
   Widget videoView() {
     return SafeArea(
-      top: true,
       child: PageView.builder(
             itemCount: 10,
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) => Stack(
               children: [
                 Expanded(child: Container(height: double.infinity,child: Image(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"),fit: BoxFit.cover,))),
-                Positioned(top: 10,child: Row(
-                  children: [
-                    ElevatedButton(onPressed: (){}, child: Text("Khám phá"))
+                Container(
+                    margin: EdgeInsetsGeometry.directional(top: 10),
+                    child: Row(
+                      children: [
+                        ElevatedButton(onPressed: (){}, child: Text("Khám phá")),
+                        Spacer(),
+                        Container(child: Icon(Icons.find_in_page_outlined),),
+                        CircleAvatar(child: Icon(Icons.account_circle),backgroundColor: Colors.grey,)
                   ],
-                )),
+                )
+                ),
               ],
             ),
           ),
