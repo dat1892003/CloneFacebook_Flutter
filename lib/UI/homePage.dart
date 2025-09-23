@@ -110,8 +110,8 @@ class _HomePageState extends State<HomePage>
             tabs: [
               Tab(
                   icon: Stack(children: [
-                Container(child: Icon(Icons.home)),
-                Container(
+                    Container(child: Icon(Icons.home)),
+                    Container(
                   width: 10,
                   height: 10,
                   margin: EdgeInsets.only(left: 15),
@@ -136,12 +136,20 @@ class _HomePageState extends State<HomePage>
           screenhome(),
           Center(child: Text("Friend Screen")),
           Center(child: Text("Messenge Screen")),
-          Center(child: Text("Video Screen")),
+          videoView(),
           Center(child: Text("Notification Screen")),
           Center(child: Text("Store Screen")),
         ],
       ),
     );
+  }
+
+  PageView videoView() {
+    return PageView.builder(
+          itemCount: 10,
+          scrollDirection: Axis.vertical,
+          itemBuilder: (context, index) => Center( child: Text("$index"),),
+        );
   }
 
   TabBarView buildTabBarView() {
