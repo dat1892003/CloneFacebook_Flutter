@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage>
 
   NestedScrollView buildNestedScrollView() {
     return NestedScrollView(
+      floatHeaderSlivers: true,
       headerSliverBuilder: (context, innerBoxIsScrolled) => [
         SliverAppBar(
           title: Text("facebook",
@@ -134,9 +135,9 @@ class _HomePageState extends State<HomePage>
         controller: tabController,
         children: [
           screenhome(),
+          videoView(),
           Center(child: Text("Friend Screen")),
           Center(child: Text("Messenge Screen")),
-          videoView(),
           Center(child: Text("Notification Screen")),
           Center(child: Text("Store Screen")),
         ],
@@ -144,12 +145,24 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  PageView videoView() {
-    return PageView.builder(
-          itemCount: 10,
-          scrollDirection: Axis.vertical,
-          itemBuilder: (context, index) => Center( child: Text("$index"),),
-        );
+  Widget videoView() {
+    return SafeArea(
+      top: true,
+      child: PageView.builder(
+            itemCount: 10,
+            scrollDirection: Axis.vertical,
+            itemBuilder: (context, index) => Stack(
+              children: [
+                Expanded(child: Container(height: double.infinity,child: Image(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"),fit: BoxFit.cover,))),
+                Positioned(top: 10,child: Row(
+                  children: [
+                    ElevatedButton(onPressed: (){}, child: Text("Khám phá"))
+                  ],
+                )),
+              ],
+            ),
+          ),
+    );
   }
 
   TabBarView buildTabBarView() {
