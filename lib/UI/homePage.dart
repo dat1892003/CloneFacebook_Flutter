@@ -159,11 +159,11 @@ class _HomePageState extends State<HomePage>
                       children: [
                         ElevatedButton(
                           onPressed: (){},
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[400]), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800], minimumSize: Size(50, 45)), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
                         ElevatedButton(onPressed: (){}, child: Text("Khám phá")),
                         Spacer(),
                         Container(child: Icon(Icons.find_in_page_outlined),),
-                        CircleAvatar(child: Icon(Icons.account_circle),backgroundColor: Colors.grey,)
+                        CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500],)
                   ],
                 ),
                 ),
