@@ -157,10 +157,18 @@ class _HomePageState extends State<HomePage>
                     margin: EdgeInsetsGeometry.directional(top: 10),
                     child: Row(
                       children: [
-                        ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800], minimumSize: Size(50, 45)), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
-                        ElevatedButton(onPressed: (){}, child: Text("Khám phá")),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: ElevatedButton(
+                            onPressed: (){},
+                            style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[600], minimumSize: Size(50, 45)), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: ElevatedButton(
+                              onPressed: (){},
+                              style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[600], minimumSize: Size(50, 45)), child: Text("Khám phá", style: TextStyle(color: Colors.white),)),
+                        ),
                         Spacer(),
                         Container(child: Icon(Icons.find_in_page_outlined),),
                         CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500],)
