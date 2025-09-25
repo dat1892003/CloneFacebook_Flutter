@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage>
                               style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[600], minimumSize: Size(50, 45)), child: Text("Khám phá", style: TextStyle(color: Colors.white),)),
                         ),
                         Spacer(),
-                        Container(child: Icon(Icons.find_in_page_outlined),),
+                        CircleAvatar(child: Icon(Icons.search, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500]),
                         CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500],)
                   ],
                 ),
