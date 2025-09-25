@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage>
                         ),
                         Spacer(),
                         CircleAvatar(child: Icon(Icons.search, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500]),
-                        CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500],)
+                        Container(margin: EdgeInsets.only(left: 10),child: CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500],))
                   ],
                 ),
                 ),
