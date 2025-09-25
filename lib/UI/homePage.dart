@@ -157,7 +157,9 @@ class _HomePageState extends State<HomePage>
                     margin: EdgeInsetsGeometry.directional(top: 10),
                     child: Row(
                       children: [
-                        ElevatedButton(onPressed: (){}, child: Text("Dành cho bạn")),
+                        ElevatedButton(
+                          onPressed: (){},
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[400]), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
                         ElevatedButton(onPressed: (){}, child: Text("Khám phá")),
                         Spacer(),
                         Container(child: Icon(Icons.find_in_page_outlined),),
