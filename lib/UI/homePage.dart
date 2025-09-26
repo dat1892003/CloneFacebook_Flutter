@@ -183,7 +183,10 @@ class _HomePageState extends State<HomePage>
                         borderRadius: BorderRadius.circular(100),
                         color: Colors.grey[600]
                       ) ,child: Icon(Icons.replay_10,size: 50, color: Colors.white,)),
-                      Icon(Icons.play_arrow, color: Colors.white,),
+                      Container(margin: EdgeInsets.only(right: 10),decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.grey[600]
+                      ) ,child: Icon(Icons.play_arrow,size: 50, color: Colors.white,)),
                       Container(margin: EdgeInsets.only(left: 10),decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           color: Colors.grey[600]
@@ -194,7 +197,10 @@ class _HomePageState extends State<HomePage>
                 Align(alignment: AlignmentGeometry.directional(1, -1),child: Container(child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(Icons.favorite, color: Colors.red,),
+                    Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.grey[600]
+                    ) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
                     Icon(Icons.comment, color: Colors.white,),
                     Icon(FontAwesomeIcons.share),
                     Icon(Icons.more_horiz)
