@@ -208,8 +208,7 @@ class _HomePageState extends State<HomePage>
                         color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
                     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]
-                    ) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
+                        color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
                   ],
                 ),)),
               ],
