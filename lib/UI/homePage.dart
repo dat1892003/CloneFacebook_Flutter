@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage>
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) => Stack(
               children: [
-                Expanded(child: Container(height: double.infinity,child: Image(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"),fit: BoxFit.cover,))),
+                Container(height: double.infinity,child: Image(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"),fit: BoxFit.cover,)),
                 Container(
                     margin: EdgeInsetsGeometry.directional(top: 10),
                     child: Row(
@@ -205,12 +205,13 @@ class _HomePageState extends State<HomePage>
                         color: Colors.grey[600]) ,child: Icon(Icons.comment,size: 40, color: Colors.white,)),
                     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
+                        color: Colors.grey[600]) ,child: Icon(Icons.share,size: 40, color: Colors.white,)),
                     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
+                        color: Colors.grey[600]) ,child: Icon(Icons.more_horiz,size: 40, color: Colors.white,)),
                   ],
                 ),)),
+
               ],
             ),
           ),
