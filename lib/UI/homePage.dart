@@ -198,8 +198,10 @@ class _HomePageState extends State<HomePage>
                     alignment: AlignmentGeometry.directional(1, 1),
                     child: Container(
                       width: double.infinity,
+                      height: 250,
+                      color: Colors.grey,
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("abc"),
                           Spacer(),
