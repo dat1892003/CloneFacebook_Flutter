@@ -194,24 +194,53 @@ class _HomePageState extends State<HomePage>
                     ],
                   ),
                 ),
-                Align(alignment: AlignmentGeometry.directional(1, -1),child: Container(child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
-                    Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]) ,child: Icon(Icons.comment,size: 40, color: Colors.white,)),
-                    Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]) ,child: Icon(Icons.share,size: 40, color: Colors.white,)),
-                    Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]) ,child: Icon(Icons.more_horiz,size: 40, color: Colors.white,)),
-                  ],
-                ),)),
-
+                // Align(alignment: AlignmentGeometry.directional(1, -1),child: Container(child: Column(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(100),
+                //         color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
+                //     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(100),
+                //         color: Colors.grey[600]) ,child: Icon(Icons.comment,size: 40, color: Colors.white,)),
+                //     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(100),
+                //         color: Colors.grey[600]) ,child: Icon(Icons.share,size: 40, color: Colors.white,)),
+                //     Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                //         borderRadius: BorderRadius.circular(100),
+                //         color: Colors.grey[600]) ,child: Icon(Icons.more_horiz,size: 40, color: Colors.white,)),
+                //   ],
+                // ),)),
+                Align(
+                    alignment: AlignmentGeometry.directional(1, 1),
+                    child: Container(
+                      width: double.infinity,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text("abc"),
+                          Spacer(),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
+                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Colors.grey[600]) ,child: Icon(Icons.comment,size: 40, color: Colors.white,)),
+                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Colors.grey[600]) ,child: Icon(Icons.share,size: 40, color: Colors.white,)),
+                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Colors.grey[600]) ,child: Icon(Icons.more_horiz,size: 40, color: Colors.white,)),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                )
               ],
             ),
           ),
