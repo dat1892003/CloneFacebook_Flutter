@@ -205,22 +205,25 @@ class _HomePageState extends State<HomePage>
                         children: [
                           Text("abc"),
                           Spacer(),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
-                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.grey[600]) ,child: Icon(Icons.comment,size: 40, color: Colors.white,)),
-                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.grey[600]) ,child: Icon(Icons.share,size: 40, color: Colors.white,)),
-                              Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  color: Colors.grey[600]) ,child: Icon(Icons.more_horiz,size: 40, color: Colors.white,)),
-                            ],
+                          Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: Colors.grey[600]) ,child: Icon(Icons.favorite,size: 40, color: Colors.red,)),
+                                Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),padding: EdgeInsets.only(top: 4),decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: Colors.grey[600]) ,child: Icon(Icons.comment,size: 40, color: Colors.white,)),
+                                Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10),decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: Colors.grey[600]) ,child: Center(child: Icon(Icons.share,size: 40, color: Colors.white,))),
+                                Container(width: 50, height: 50,margin: EdgeInsets.only(bottom: 10), decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(100),
+                                    color: Colors.grey[600]) ,child: Center(child: Icon(Icons.more_horiz,size: 40, color: Colors.white,))),
+                              ],
+                            ),
                           )
                         ],
                       ),
