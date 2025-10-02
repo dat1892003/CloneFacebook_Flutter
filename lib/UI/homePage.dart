@@ -199,16 +199,30 @@ class _HomePageState extends State<HomePage>
                     child: Container(
                       width: double.infinity,
                       height: 250,
-                      color: Colors.grey,
+                      color: Color(0x40000000),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
                             children: [
+                              SizedBox(height: 10,),
                               Row(
                                 children: [
-                                  Icon(Icons.account_circle, size: 20,),
-                                  Text("Người dùng $index"),
+                                  SizedBox(width: 5,),
+                                  Icon(Icons.account_circle, size: 40, color: Colors.white,),
+                                  SizedBox(width: 5,),
+                                  Text("Người dùng $index", style: TextStyle(color: Colors.white),),
+                                  SizedBox(width: 5,),
+                                  TextButton(onPressed: (){}, child: Row(
+                                    children: [
+                                      Text("Đang theo dõi", style: TextStyle(color: Colors.white),),
+                                      Icon(Icons.arrow_drop_down_outlined, color: Colors.white,)
+                                    ],
+                                  ),
+                                    style: TextButton.styleFrom(
+                                      side: BorderSide(width: 1, color: Colors.white,),
+                                    ),
+                                  )
                                 ],
                               ),
                             ],
