@@ -203,7 +203,16 @@ class _HomePageState extends State<HomePage>
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("abc"),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.account_circle, size: 20,),
+                                  Text("Người dùng $index"),
+                                ],
+                              ),
+                            ],
+                          ),
                           Spacer(),
                           Container(
                             margin: EdgeInsets.only(right: 10),
