@@ -161,17 +161,17 @@ class _HomePageState extends State<HomePage>
                           margin: EdgeInsets.only(left: 10),
                           child: ElevatedButton(
                             onPressed: (){},
-                            style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[600], minimumSize: Size(50, 45)), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
+                            style: ElevatedButton.styleFrom(backgroundColor: Color(0x40000000), minimumSize: Size(50, 45)), child: Text("Dành cho bạn", style: TextStyle(color: Colors.white),)),
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 10),
                           child: ElevatedButton(
                               onPressed: (){},
-                              style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[600], minimumSize: Size(50, 45)), child: Text("Khám phá", style: TextStyle(color: Colors.white),)),
+                              style: ElevatedButton.styleFrom(backgroundColor: Color(0x40000000), minimumSize: Size(50, 45)), child: Text("Khám phá", style: TextStyle(color: Colors.white),)),
                         ),
                         Spacer(),
-                        CircleAvatar(child: Icon(Icons.search, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500]),
-                        Container(margin: EdgeInsets.only(left: 10),child: CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Colors.grey[500],))
+                        CircleAvatar(child: Icon(Icons.search, size: 30,color: Colors.white,),backgroundColor: Color(0x40000000),
+                        Container(margin: EdgeInsets.only(left: 10),child: CircleAvatar(child: Icon(Icons.account_circle, size: 30,color: Colors.white,),backgroundColor: Color(0x40000000),))
                   ],
                 ),
                 ),
@@ -181,15 +181,15 @@ class _HomePageState extends State<HomePage>
                     children: [
                       Container(margin: EdgeInsets.only(right: 10),decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: Colors.grey[600]
+                        color: Color(0x40000000)
                       ) ,child: Icon(Icons.replay_10,size: 50, color: Colors.white,)),
                       Container(margin: EdgeInsets.only(right: 10),decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: Colors.grey[600]
+                          color: Color(0x40000000)
                       ) ,child: Icon(Icons.play_arrow,size: 50, color: Colors.white,)),
                       Container(margin: EdgeInsets.only(left: 10),decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: Colors.grey[600]
+                          color: Color(0x40000000)
                       ) ,child: Icon(Icons.forward_10,size: 50, color: Colors.white,)),
                     ],
                   ),
