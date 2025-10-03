@@ -266,19 +266,6 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  TabBarView buildTabBarView() {
-    return TabBarView(
-      controller: tabController,
-      children: [
-        screenhome(),
-        Center(child: Text("Friend Screen")),
-        Center(child: Text("Messenge Screen")),
-        Center(child: Text("Video Screen")),
-        Center(child: Text("Notification Screen")),
-        Center(child: Text("Store Screen")),
-      ],
-    );
-  }
 
   Widget screenhome() {
     return SingleChildScrollView(
