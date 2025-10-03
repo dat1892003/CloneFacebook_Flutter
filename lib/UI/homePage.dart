@@ -137,12 +137,24 @@ class _HomePageState extends State<HomePage>
           screenhome(),
           videoView(),
           Center(child: Text("Store Screen")),
-          Center(child: Text("Friend Screen")),
+          buildGroupView(),
           Center(child: Text("Notification Screen")),
           Center(child: Text("More Screen")),
         ],
       ),
     );
+  }
+
+  Column buildGroupView() {
+    List<String> button = ["Khám phá","Nhóm của bạn"];
+    return Column(
+          children: [
+              Container(
+                  width: double.infinity,
+                  height: 50,
+                  child: ListView.builder(itemCount: 5,scrollDirection: Axis.horizontal,itemBuilder: (context, index) => Text("${button[index]}"),)),
+          ],
+        );
   }
 
   Widget videoView() {
