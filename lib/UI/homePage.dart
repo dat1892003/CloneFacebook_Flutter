@@ -136,10 +136,10 @@ class _HomePageState extends State<HomePage>
         children: [
           screenhome(),
           videoView(),
-          Center(child: Text("Friend Screen")),
-          Center(child: Text("Messenge Screen")),
-          Center(child: Text("Notification Screen")),
           Center(child: Text("Store Screen")),
+          Center(child: Text("Friend Screen")),
+          Center(child: Text("Notification Screen")),
+          Center(child: Text("More Screen")),
         ],
       ),
     );
