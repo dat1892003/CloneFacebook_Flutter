@@ -150,9 +150,21 @@ class _HomePageState extends State<HomePage>
     return Column(
           children: [
               Container(
+                child: Row(
+                  children: [
+                    Text("Nhóm"),
+                    Spacer(),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.add_box), color: Colors.black,),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.settings), color: Colors.black,),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.search), color: Colors.black,),
+                  ],
+                ),
+              ),
+              Container(
                   width: double.infinity,
                   height: 50,
-                  child: ListView.builder(itemCount: 5,scrollDirection: Axis.horizontal,itemBuilder: (context, index) => Text("${button[index]}"),)),
+                  child: ListView.builder(itemCount: 2,scrollDirection: Axis.horizontal,itemBuilder: (context, index) => Text("${button[index]}"),)),
+              Divider(),
           ],
         );
   }
