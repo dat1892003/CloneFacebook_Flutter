@@ -146,10 +146,11 @@ class _HomePageState extends State<HomePage>
   }
 
   Column buildGroupView() {
-    List<String> button = ["Khám phá","Nhóm của bạn"];
+    List<String> button = ["Khám phá","Nhóm của bạn","Bài Viết","Kết nối", "Chia sẻ"];
     return Column(
           children: [
               Container(
+                margin: EdgeInsets.only(left: 10),
                 child: Row(
                   children: [
                     Text("Nhóm"),
@@ -163,8 +164,24 @@ class _HomePageState extends State<HomePage>
               Container(
                   width: double.infinity,
                   height: 50,
-                  child: ListView.builder(itemCount: 2,scrollDirection: Axis.horizontal,itemBuilder: (context, index) => Text("${button[index]}"),)),
+                  margin: EdgeInsets.only(left: 10),
+                  child: ListView.builder(
+                    itemCount: 2,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => Text("${button[index]}"),)),
               Divider(),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Nhóm của bạn"),
+                    TextButton(onPressed: (){}, child: Text("Xem tất cả", style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),))
+                  ],
+                ),
+              ),
+            Divider(thickness: 15,),
+
           ],
         );
   }
