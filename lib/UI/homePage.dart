@@ -166,9 +166,11 @@ class _HomePageState extends State<HomePage>
                   height: 50,
                   margin: EdgeInsets.only(left: 10),
                   child: ListView.builder(
-                    itemCount: 2,
+                    itemCount: button.length,
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => Text("${button[index]}"),)),
+                    itemBuilder: (context, index) =>
+                        Container(margin: EdgeInsets.only(right: 5),child: ElevatedButton(onPressed: (){}, child: Text("${button[index]}"))),
+                  )),
               Divider(),
               Container(
                 margin: EdgeInsets.only(left: 10),
