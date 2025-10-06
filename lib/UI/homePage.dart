@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage>
                 margin: EdgeInsets.only(left: 10),
                 child: Row(
                   children: [
-                    Text("Nhóm"),
+                    Text("Nhóm", style: TextStyle(fontSize: 20)),
                     Spacer(),
                     IconButton(onPressed: (){}, icon: Icon(Icons.add_box), color: Colors.black,),
                     IconButton(onPressed: (){}, icon: Icon(Icons.settings), color: Colors.black,),
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage>
                     itemCount: button.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) =>
-                        Container(margin: EdgeInsets.only(right: 5),child: ElevatedButton(onPressed: (){}, child: Text("${button[index]}"))),
+                        Container(margin: EdgeInsets.only(right: 5,bottom: 5),child: ElevatedButton(onPressed: (){}, child: Text("${button[index]}", style: TextStyle(color: Colors.black),))),
                   )),
               Divider(),
               Container(
@@ -177,13 +177,21 @@ class _HomePageState extends State<HomePage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Nhóm của bạn"),
+                    Text("Nhóm của bạn", style: TextStyle(fontSize: 20),),
                     TextButton(onPressed: (){}, child: Text("Xem tất cả", style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),))
                   ],
                 ),
               ),
+            Container(
+              width: double.infinity,
+              height: 500,
+              child: ListView.builder(
+                  itemCount: button.length,
+                  itemBuilder: (context, index) => Row(
+                    children: [Text("${button[index]}")],
+                  )),
+            ),
             Divider(thickness: 15,),
-
           ],
         );
   }
