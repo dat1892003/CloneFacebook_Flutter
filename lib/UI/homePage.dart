@@ -183,12 +183,30 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
             Container(
+              margin: EdgeInsets.only(left: 10),
               width: double.infinity,
-              height: 500,
+              height: 300,
               child: ListView.builder(
                   itemCount: button.length,
                   itemBuilder: (context, index) => Row(
-                    children: [Text("${button[index]}")],
+                    children: [
+                      Icon(Icons.group, size: 50,),
+                      SizedBox(width: 10,),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Nhóm ${button[index]}", style: TextStyle(fontSize: 20),),
+                          Row(
+                            children: [
+                              Icon(Icons.push_pin),
+                              Text("Đã ghim"),
+                              SizedBox(width: 10,),
+                              Text("Số thành viên: 30")
+                            ],
+                          )
+                        ],
+                      )
+                    ],
                   )),
             ),
             Divider(thickness: 15,),
