@@ -148,6 +148,7 @@ class _HomePageState extends State<HomePage>
   Column buildGroupView() {
     List<String> button = ["Khám phá","Nhóm của bạn","Bài Viết","Kết nối", "Chia sẻ"];
     return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
               Container(
                 margin: EdgeInsets.only(left: 10),
@@ -210,6 +211,14 @@ class _HomePageState extends State<HomePage>
                   )),
             ),
             Divider(thickness: 15,),
+            Container(margin: EdgeInsets.only(left: 10, top: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Từ nhóm của bạn", style: TextStyle(fontSize: 20),),
+                    TextButton(onPressed: (){}, child: Text("Ẩn đi", style: TextStyle(color: Colors.black,decoration: TextDecoration.underline),))
+                  ],
+                )),
           ],
         );
   }
