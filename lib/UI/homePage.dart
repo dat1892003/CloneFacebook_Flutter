@@ -218,7 +218,29 @@ class _HomePageState extends State<HomePage>
                     Text("Từ nhóm của bạn", style: TextStyle(fontSize: 20),),
                     TextButton(onPressed: (){}, child: Text("Ẩn đi", style: TextStyle(color: Colors.black,decoration: TextDecoration.underline),))
                   ],
-                )),
+                )
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Row(
+                children: [
+                  Icon(Icons.groups),
+                  Column(
+                    children: [
+                      Text("Nhóm bạn đã tham gia"),
+                      Row(
+                        children: [
+                          Text("Người đăng ẩn danh"),
+
+                          Text("Vừa xong"),
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
           ],
         );
   }
