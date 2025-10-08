@@ -225,18 +225,24 @@ class _HomePageState extends State<HomePage>
               child: Row(
                 children: [
                   Icon(Icons.groups),
+                  SizedBox(width: 10,),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Nhóm bạn đã tham gia"),
                       Row(
                         children: [
                           Text("Người đăng ẩn danh"),
-
+                          Container(margin: EdgeInsets.only(left: 5, right: 5),child: Icon(Icons.circle, size: 5,)),
                           Text("Vừa xong"),
+                          Container( margin:EdgeInsets.only(left: 5),child: Icon(FontAwesomeIcons.earthAmericas)),
                         ],
                       )
                     ],
                   ),
+                  Spacer(),
+                  Container(margin: EdgeInsets.only(right: 5),child: Icon(Icons.more_horiz)),
+                  Container(margin: EdgeInsets.only(right: 5),child: Icon(Icons.close)),
                 ],
               ),
             ),
