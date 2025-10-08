@@ -246,6 +246,29 @@ class _HomePageState extends State<HomePage>
                 ],
               ),
             ),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Text("Đây là nội dung của bài viết"),),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(onPressed: (){}, child: Row(
+                  children: [
+                    Icon(Icons.favorite, color: Colors.red,),
+                    Text("Yêu thích")
+                  ],)),
+                TextButton(onPressed: (){}, child: Row(
+                  children: [
+                    Icon(Icons.comment,),
+                    Text("Bình luận")
+                  ],)),
+                TextButton(onPressed: (){}, child: Row(
+                  children: [
+                    Icon(FontAwesomeIcons.share,),
+                    Text("Chia sẻ")
+                  ],)),
+              ],
+            ),
             Divider(),
           ],
         );
