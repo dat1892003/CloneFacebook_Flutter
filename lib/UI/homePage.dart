@@ -270,6 +270,16 @@ class _HomePageState extends State<HomePage>
               ],
             ),
             Divider(),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Row(
+                children: [
+                  Icon(Icons.add_box_outlined,size: 20,),
+                  SizedBox(width: 5,),
+                  TextField(),
+                ],
+              ),
+            )
           ],
         );
   }
