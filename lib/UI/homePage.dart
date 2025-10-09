@@ -271,12 +271,25 @@ class _HomePageState extends State<HomePage>
             ),
             Divider(),
             Container(
+              width: double.infinity,
+              height: 50,
               margin: EdgeInsets.only(left: 10),
               child: Row(
                 children: [
-                  Icon(Icons.add_box_outlined,size: 20,),
-                  SizedBox(width: 5,),
-                  TextField(),
+                  Icon(Icons.person, size: 40),
+                  SizedBox(width: 5),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Nhập bình luận...",
+                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 5,)
                 ],
               ),
             )
