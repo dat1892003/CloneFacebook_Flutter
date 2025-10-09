@@ -145,156 +145,163 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  Column buildGroupView() {
+  Widget buildGroupView() {
     List<String> button = ["Khám phá","Nhóm của bạn","Bài Viết","Kết nối", "Chia sẻ"];
-    return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-              Container(
-                margin: EdgeInsets.only(left: 10),
-                child: Row(
-                  children: [
-                    Text("Nhóm", style: TextStyle(fontSize: 20)),
-                    Spacer(),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.add_box), color: Colors.black,),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.settings), color: Colors.black,),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.search), color: Colors.black,),
-                  ],
-                ),
-              ),
-              Container(
-                  width: double.infinity,
-                  height: 50,
+    return SingleChildScrollView(
+      child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+                Container(
                   margin: EdgeInsets.only(left: 10),
-                  child: ListView.builder(
-                    itemCount: button.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) =>
-                        Container(margin: EdgeInsets.only(right: 5,bottom: 5),child: ElevatedButton(onPressed: (){}, child: Text("${button[index]}", style: TextStyle(color: Colors.black),))),
-                  )),
-              Divider(),
-              Container(
-                margin: EdgeInsets.only(left: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Nhóm của bạn", style: TextStyle(fontSize: 20),),
-                    TextButton(onPressed: (){}, child: Text("Xem tất cả", style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),))
-                  ],
-                ),
-              ),
-            Container(
-              margin: EdgeInsets.only(left: 10),
-              width: double.infinity,
-              height: 300,
-              child: ListView.builder(
-                  itemCount: button.length,
-                  itemBuilder: (context, index) => Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.group, size: 50,),
-                      SizedBox(width: 10,),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Nhóm ${button[index]}", style: TextStyle(fontSize: 20),),
-                          Row(
-                            children: [
-                              Icon(Icons.push_pin),
-                              Text("Đã ghim"),
-                              SizedBox(width: 10,),
-                              Text("Số thành viên: 30")
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  )),
-            ),
-            Divider(thickness: 15,),
-            Container(margin: EdgeInsets.only(left: 10, top: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Từ nhóm của bạn", style: TextStyle(fontSize: 20),),
-                    TextButton(onPressed: (){}, child: Text("Ẩn đi", style: TextStyle(color: Colors.black,decoration: TextDecoration.underline),))
-                  ],
-                )
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 10),
-              child: Row(
-                children: [
-                  Icon(Icons.groups),
-                  SizedBox(width: 10,),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Nhóm bạn đã tham gia"),
-                      Row(
-                        children: [
-                          Text("Người đăng ẩn danh"),
-                          Container(margin: EdgeInsets.only(left: 5, right: 5),child: Icon(Icons.circle, size: 5,)),
-                          Text("Vừa xong"),
-                          Container( margin:EdgeInsets.only(left: 5),child: Icon(FontAwesomeIcons.earthAmericas)),
-                        ],
-                      )
+                      Text("Nhóm", style: TextStyle(fontSize: 20)),
+                      Spacer(),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.add_box), color: Colors.black,),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.settings), color: Colors.black,),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.search), color: Colors.black,),
                     ],
                   ),
-                  Spacer(),
-                  Container(margin: EdgeInsets.only(right: 5),child: Icon(Icons.more_horiz)),
-                  Container(margin: EdgeInsets.only(right: 5),child: Icon(Icons.close)),
+                ),
+                Container(
+                    width: double.infinity,
+                    height: 50,
+                    margin: EdgeInsets.only(left: 10),
+                    child: ListView.builder(
+                      itemCount: button.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) =>
+                          Container(margin: EdgeInsets.only(right: 5,bottom: 5),child: ElevatedButton(onPressed: (){}, child: Text("${button[index]}", style: TextStyle(color: Colors.black),))),
+                    )),
+                Divider(),
+                Container(
+                  margin: EdgeInsets.only(left: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Nhóm của bạn", style: TextStyle(fontSize: 20),),
+                      TextButton(onPressed: (){}, child: Text("Xem tất cả", style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),))
+                    ],
+                  ),
+                ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                width: double.infinity,
+                height: 300,
+                child: ListView.builder(
+                    itemCount: button.length,
+                    itemBuilder: (context, index) => Row(
+                      children: [
+                        Icon(Icons.group, size: 50,),
+                        SizedBox(width: 10,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Nhóm ${button[index]}", style: TextStyle(fontSize: 20),),
+                            Row(
+                              children: [
+                                Icon(Icons.push_pin),
+                                Text("Đã ghim"),
+                                SizedBox(width: 10,),
+                                Text("Số thành viên: 30")
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    )),
+              ),
+              Divider(thickness: 15,),
+              Container(margin: EdgeInsets.only(left: 10, top: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Từ nhóm của bạn", style: TextStyle(fontSize: 20),),
+                      TextButton(onPressed: (){}, child: Text("Ẩn đi", style: TextStyle(color: Colors.black,decoration: TextDecoration.underline),))
+                    ],
+                  )
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    Icon(Icons.groups),
+                    SizedBox(width: 10,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Nhóm bạn đã tham gia"),
+                        Row(
+                          children: [
+                            Text("Người đăng ẩn danh"),
+                            Container(margin: EdgeInsets.only(left: 5, right: 5),child: Icon(Icons.circle, size: 5,)),
+                            Text("Vừa xong"),
+                            Container( margin:EdgeInsets.only(left: 5),child: Icon(FontAwesomeIcons.earthAmericas)),
+                          ],
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Container(margin: EdgeInsets.only(right: 5),child: Icon(Icons.more_horiz)),
+                    Container(margin: EdgeInsets.only(right: 5),child: Icon(Icons.close)),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Text("Đây là nội dung của bài viết"),),
+              Container(
+                width: double.infinity,
+                height: 300,
+                decoration: BoxDecoration(image: DecorationImage(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg",),fit: BoxFit.cover)),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(onPressed: (){}, child: Row(
+                    children: [
+                      Icon(Icons.favorite, color: Colors.red,),
+                      Text("Yêu thích")
+                    ],)),
+                  TextButton(onPressed: (){}, child: Row(
+                    children: [
+                      Icon(Icons.comment,),
+                      Text("Bình luận")
+                    ],)),
+                  TextButton(onPressed: (){}, child: Row(
+                    children: [
+                      Icon(FontAwesomeIcons.share,),
+                      Text("Chia sẻ")
+                    ],)),
                 ],
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 10),
-              child: Text("Đây là nội dung của bài viết"),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(onPressed: (){}, child: Row(
+              Divider(),
+              Container(
+                width: double.infinity,
+                height: 50,
+                margin: EdgeInsets.only(left: 10),
+                child: Row(
                   children: [
-                    Icon(Icons.favorite, color: Colors.red,),
-                    Text("Yêu thích")
-                  ],)),
-                TextButton(onPressed: (){}, child: Row(
-                  children: [
-                    Icon(Icons.comment,),
-                    Text("Bình luận")
-                  ],)),
-                TextButton(onPressed: (){}, child: Row(
-                  children: [
-                    Icon(FontAwesomeIcons.share,),
-                    Text("Chia sẻ")
-                  ],)),
-              ],
-            ),
-            Divider(),
-            Container(
-              width: double.infinity,
-              height: 50,
-              margin: EdgeInsets.only(left: 10),
-              child: Row(
-                children: [
-                  Icon(Icons.person, size: 40),
-                  SizedBox(width: 5),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: "Nhập bình luận...",
-                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                    Icon(Icons.person, size: 40),
+                    SizedBox(width: 5),
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Nhập bình luận...",
+                          contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(width: 5,)
-                ],
-              ),
-            )
-          ],
-        );
+                    SizedBox(width: 5,)
+                  ],
+                ),
+              )
+            ],
+          ),
+    );
   }
 
   Widget videoView() {
