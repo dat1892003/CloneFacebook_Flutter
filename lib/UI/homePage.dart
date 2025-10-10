@@ -136,21 +136,33 @@ class _HomePageState extends State<HomePage>
         children: [
           screenhome(),
           videoView(),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Center(
-                  child: Text("friend"),
-                )
-              ],
-            ),
-          ),
+          buildFriendView(),
           buildGroupView(),
           Center(child: Text("Notification Screen")),
           Center(child: Text("More Screen")),
         ],
       ),
     );
+  }
+
+  SingleChildScrollView buildFriendView() {
+    return SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 10, top: 5),
+                child: Row(
+                  children: [
+                    Text("Bạn bè", style: TextStyle(fontSize: 20),),
+                    Spacer(),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+                    SizedBox(width: 5,),
+                  ],
+                ),
+              )
+            ],
+          ),
+        );
   }
 
   Widget buildGroupView() {
