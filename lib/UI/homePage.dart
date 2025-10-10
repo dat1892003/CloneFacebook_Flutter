@@ -123,8 +123,8 @@ class _HomePageState extends State<HomePage>
                 ),
               ])),
               Tab(icon: Icon(Icons.video_library)),
-              Tab(icon: Icon(Icons.store)),
               Tab(icon: Icon(Icons.group)),
+              Tab(icon: Icon(Icons.groups_2_outlined)),
               Tab(icon: Icon(Icons.notifications)),
               Tab(icon: Icon(Icons.menu)),
             ],
@@ -136,7 +136,15 @@ class _HomePageState extends State<HomePage>
         children: [
           screenhome(),
           videoView(),
-          Center(child: Text("Store Screen")),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Center(
+                  child: Text("friend"),
+                )
+              ],
+            ),
+          ),
           buildGroupView(),
           Center(child: Text("Notification Screen")),
           Center(child: Text("More Screen")),
