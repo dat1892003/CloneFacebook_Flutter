@@ -165,8 +165,8 @@ class _HomePageState extends State<HomePage>
                 child: Row(
                   children: [
                     ElevatedButton(onPressed: (){},
-                        style: ElevatedButton.styleFrom(backgroundColor: Colors.white60),
-                        child: Text("Gợi ý")),
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[400]),
+                        child: Text("Gợi ý",style: TextStyle(color: Colors.white),)),
                   ],
                 ),
               )
