@@ -159,6 +159,16 @@ class _HomePageState extends State<HomePage>
                     SizedBox(width: 5,),
                   ],
                 ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    ElevatedButton(onPressed: (){},
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.white60),
+                        child: Text("Gợi ý")),
+                  ],
+                ),
               )
             ],
           ),
