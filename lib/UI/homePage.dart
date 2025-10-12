@@ -167,6 +167,10 @@ class _HomePageState extends State<HomePage>
                     ElevatedButton(onPressed: (){},
                         style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[400]),
                         child: Text("Gợi ý",style: TextStyle(color: Colors.white),)),
+                    SizedBox(width: 10,),
+                    ElevatedButton(onPressed: (){},
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[400]),
+                        child: Text("Bạn bè",style: TextStyle(color: Colors.white),)),
                   ],
                 ),
               )
