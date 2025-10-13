@@ -190,6 +190,18 @@ class _HomePageState extends State<HomePage>
                   Spacer(),
                   TextButton(onPressed: (){}, child: Text("Xem tất cả", style: TextStyle(color: Colors.blue),))
                 ],
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                height: 400,
+                child: ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: (context, index) => Row(
+                    children: [
+                      Text("đây là lời mời")
+                    ],
+                  ),
+                ),
               )
             ],
           ),
