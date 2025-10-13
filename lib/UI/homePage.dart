@@ -188,7 +188,7 @@ class _HomePageState extends State<HomePage>
                   SizedBox(width: 5,),
                   Text("4", style: TextStyle(color: Colors.red,fontSize: 20),),
                   Spacer(),
-                  TextButton(onPressed: (){}, child: Text("Xem tất cả"))
+                  TextButton(onPressed: (){}, child: Text("Xem tất cả", style: TextStyle(color: Colors.blue),))
                 ],
               )
             ],
