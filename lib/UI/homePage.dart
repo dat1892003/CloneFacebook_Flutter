@@ -148,6 +148,7 @@ class _HomePageState extends State<HomePage>
   SingleChildScrollView buildFriendView() {
     return SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 margin: EdgeInsets.only(left: 10, top: 5),
@@ -178,8 +179,17 @@ class _HomePageState extends State<HomePage>
                 margin: EdgeInsets.only(left: 10,right: 10),
                 child: Divider(),
               ),
-              Container(
-                child: ,
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 10),
+                    child: Text("Lời mời kết bạn", style: TextStyle(fontSize: 20),),
+                  ),
+                  SizedBox(width: 5,),
+                  Text("4", style: TextStyle(color: Colors.red,fontSize: 20),),
+                  Spacer(),
+                  TextButton(onPressed: (){}, child: Text("Xem tất cả"))
+                ],
               )
             ],
           ),
