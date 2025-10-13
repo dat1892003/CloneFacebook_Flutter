@@ -173,6 +173,13 @@ class _HomePageState extends State<HomePage>
                         child: Text("Bạn bè",style: TextStyle(color: Colors.white),)),
                   ],
                 ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10,right: 10),
+                child: Divider(),
+              ),
+              Container(
+                child: ,
               )
             ],
           ),
