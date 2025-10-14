@@ -200,15 +200,31 @@ class _HomePageState extends State<HomePage>
                     children: [
                       Container(
                         margin: EdgeInsets.only(left: 10),
-                        child: Icon(Icons.person_2_outlined, size: 20,),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          border: Border.all(width: 1)
+                        ),
+                        child: Icon(Icons.person, size: 50,),
                       ),
                       Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(left: 5),
+                            margin: EdgeInsets.only(left: 10),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Lời mời ${index}"),
-                                Text("10 phút")
+                                Text("Lời mời ${index+1}", style: TextStyle(fontSize: 20),),
+                                SizedBox(height: 5,),
+                                Text("10 phút"),
+                                SizedBox(height: 5,),
+                                Row(
+                                  children: [
+                                    ElevatedButton(onPressed: (){},
+                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,),
+                                        child: Text("Chấp nhận", style: TextStyle(color: Colors.white),)),
+                                    SizedBox(width: 5,),
+                                    ElevatedButton(onPressed: (){}, child: Text("Xóa"))
+                                  ],
+                                )
                               ],
                             ),
                           )
