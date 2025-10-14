@@ -219,10 +219,18 @@ class _HomePageState extends State<HomePage>
                                 Row(
                                   children: [
                                     ElevatedButton(onPressed: (){},
-                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,),
+                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
+                                            minimumSize: Size(100, 45)
+                                        ),
                                         child: Text("Chấp nhận", style: TextStyle(color: Colors.white),)),
                                     SizedBox(width: 5,),
-                                    ElevatedButton(onPressed: (){}, child: Text("Xóa"))
+                                    ElevatedButton(onPressed: (){},
+                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
+                                            minimumSize: Size(100, 45)
+                                        ),
+                                        child: Text("Xóa", style: TextStyle(color: Colors.white),)),
                                   ],
                                 )
                               ],
