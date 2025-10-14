@@ -198,7 +198,21 @@ class _HomePageState extends State<HomePage>
                   itemCount: 4,
                   itemBuilder: (context, index) => Row(
                     children: [
-                      Text("đây là lời mời")
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Icon(Icons.person_2_outlined, size: 20,),
+                      ),
+                      Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 5),
+                            child: Column(
+                              children: [
+                                Text("Lời mời ${index}"),
+                                Text("10 phút")
+                              ],
+                            ),
+                          )
+                      ),
                     ],
                   ),
                 ),
