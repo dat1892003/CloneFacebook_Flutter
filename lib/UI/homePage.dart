@@ -221,14 +221,15 @@ class _HomePageState extends State<HomePage>
                                     ElevatedButton(onPressed: (){},
                                         style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
-                                            minimumSize: Size(100, 45)
+                                            minimumSize: Size(120, 45)
                                         ),
                                         child: Text("Chấp nhận", style: TextStyle(color: Colors.white),)),
                                     SizedBox(width: 5,),
                                     ElevatedButton(onPressed: (){},
-                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,
+                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.black,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
-                                            minimumSize: Size(100, 45)
+                                            minimumSize: Size(120, 45),
+
                                         ),
                                         child: Text("Xóa", style: TextStyle(color: Colors.white),)),
                                   ],
@@ -240,7 +241,11 @@ class _HomePageState extends State<HomePage>
                     ],
                   ),
                 ),
-              )
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10,right: 10),
+                child: Divider(),
+              ),
             ],
           ),
         );
