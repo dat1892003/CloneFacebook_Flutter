@@ -281,7 +281,6 @@ class _HomePageState extends State<HomePage>
                                         style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
                                               minimumSize: Size(120, 45),
-                                              maximumSize: Size(120, 45),
                                         ),
                                         child: Text("Thêm bạn bè", style: TextStyle(color: Colors.white),)),
                                     SizedBox(width: 5,),
@@ -289,7 +288,6 @@ class _HomePageState extends State<HomePage>
                                         style: ElevatedButton.styleFrom(backgroundColor:Colors.black,
                                           shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
                                           minimumSize: Size(120, 45),
-
                                         ),
                                         child: Text("Gỡ", style: TextStyle(color: Colors.white),)),
                                   ],
