@@ -271,9 +271,9 @@ class _HomePageState extends State<HomePage>
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Lời mời ${index+1}", style: TextStyle(fontSize: 20),),
+                                Text("Người được giới thiệu ${index+1}", style: TextStyle(fontSize: 20),),
                                 SizedBox(height: 5,),
-                                Text("10 phút"),
+                                Text("Có $index bạn chung"),
                                 SizedBox(height: 5,),
                                 Row(
                                   children: [
@@ -282,7 +282,7 @@ class _HomePageState extends State<HomePage>
                                             shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
                                             minimumSize: Size(120, 45)
                                         ),
-                                        child: Text("Chấp nhận", style: TextStyle(color: Colors.white),)),
+                                        child: Text("Thêm bạn bè", style: TextStyle(color: Colors.white),)),
                                     SizedBox(width: 5,),
                                     ElevatedButton(onPressed: (){},
                                         style: ElevatedButton.styleFrom(backgroundColor:Colors.black,
@@ -290,7 +290,7 @@ class _HomePageState extends State<HomePage>
                                           minimumSize: Size(120, 45),
 
                                         ),
-                                        child: Text("Xóa", style: TextStyle(color: Colors.white),)),
+                                        child: Text("Gỡ", style: TextStyle(color: Colors.white),)),
                                   ],
                                 )
                               ],
