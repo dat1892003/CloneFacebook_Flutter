@@ -250,7 +250,57 @@ class _HomePageState extends State<HomePage>
                 margin: EdgeInsets.only(left: 10,top: 5),
                 child: Text("Những người bạn có thể biết", style: TextStyle(fontSize: 20),),
               ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                height: 400,
+                child: ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: (context, index) => Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            border: Border.all(width: 1)
+                        ),
+                        child: Icon(Icons.person, size: 50,),
+                      ),
+                      Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Lời mời ${index+1}", style: TextStyle(fontSize: 20),),
+                                SizedBox(height: 5,),
+                                Text("10 phút"),
+                                SizedBox(height: 5,),
+                                Row(
+                                  children: [
+                                    ElevatedButton(onPressed: (){},
+                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.blue,
+                                            shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
+                                            minimumSize: Size(120, 45)
+                                        ),
+                                        child: Text("Chấp nhận", style: TextStyle(color: Colors.white),)),
+                                    SizedBox(width: 5,),
+                                    ElevatedButton(onPressed: (){},
+                                        style: ElevatedButton.styleFrom(backgroundColor:Colors.black,
+                                          shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
+                                          minimumSize: Size(120, 45),
 
+                                        ),
+                                        child: Text("Xóa", style: TextStyle(color: Colors.white),)),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         );
