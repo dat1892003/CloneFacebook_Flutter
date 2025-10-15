@@ -246,6 +246,11 @@ class _HomePageState extends State<HomePage>
                 margin: EdgeInsets.only(left: 10,right: 10),
                 child: Divider(),
               ),
+              Container(
+                margin: EdgeInsets.only(left: 10,top: 5),
+                child: Text("Những người bạn có thể biết", style: TextStyle(fontSize: 20),),
+              ),
+
             ],
           ),
         );
