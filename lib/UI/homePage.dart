@@ -138,15 +138,19 @@ class _HomePageState extends State<HomePage>
           videoView(),
           buildFriendView(),
           buildGroupView(),
-          SingleChildScrollView(
-            child: Center(
-              child: Text("Màn hình thông báo"),
-            ),
-          ),
+          buildnoti(),
           Center(child: Text("More Screen")),
         ],
       ),
     );
+  }
+
+  SingleChildScrollView buildnoti() {
+    return SingleChildScrollView(
+          child: Center(
+            child: Text("Màn hình thông báo"),
+          ),
+        );
   }
 
   SingleChildScrollView buildFriendView() {
