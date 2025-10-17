@@ -147,8 +147,10 @@ class _HomePageState extends State<HomePage>
 
   SingleChildScrollView buildnoti() {
     return SingleChildScrollView(
-          child: Center(
-            child: Text("Màn hình thông báo"),
+          child: Column(
+            children: [
+              Text("build thông báo")
+            ],
           ),
         );
   }
