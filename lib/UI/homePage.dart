@@ -138,7 +138,11 @@ class _HomePageState extends State<HomePage>
           videoView(),
           buildFriendView(),
           buildGroupView(),
-          Center(child: Text("Notification Screen")),
+          SingleChildScrollView(
+            child: Center(
+              child: Text("Màn hình thông báo"),
+            ),
+          ),
           Center(child: Text("More Screen")),
         ],
       ),
