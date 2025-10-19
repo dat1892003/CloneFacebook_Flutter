@@ -149,7 +149,14 @@ class _HomePageState extends State<HomePage>
     return SingleChildScrollView(
           child: Column(
             children: [
-              Text("build thông báo")
+              Row(
+                children: [
+                  Text("Thông báo", style: TextStyle(fontSize: 20),),
+                  Spacer(),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.search)),
+                  SizedBox(width: 5,)
+                ],
+              )
             ],
           ),
         );
