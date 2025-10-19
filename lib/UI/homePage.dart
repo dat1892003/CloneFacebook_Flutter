@@ -151,12 +151,30 @@ class _HomePageState extends State<HomePage>
             children: [
               Row(
                 children: [
+                  SizedBox(width: 10,),
                   Text("Thông báo", style: TextStyle(fontSize: 20),),
                   Spacer(),
                   IconButton(onPressed: (){}, icon: Icon(Icons.search)),
                   SizedBox(width: 5,)
                 ],
-              )
+              ),
+              Row(
+                children: [
+                  SizedBox(width: 10,),
+                  Text("Trước đó", style: TextStyle(fontSize: 15),)
+                ],
+              ),
+              ListView.builder(
+                  itemCount: 5,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) =>Row(
+                    children: [
+                      Text("Thống báo ${index}")
+                    ],
+                  ),
+                ),
+
             ],
           ),
         );
