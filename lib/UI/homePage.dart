@@ -168,10 +168,24 @@ class _HomePageState extends State<HomePage>
                   itemCount: 5,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) =>Row(
-                    children: [
-                      Text("Thống báo ${index}")
-                    ],
+                  itemBuilder: (context, index) =>Container(
+                    margin: EdgeInsets.only(top: 5),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.person,size: 55,),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Đây là thông báo mới của bạn sẽ tự xuống dòng nếu thông báo quá dài", style: TextStyle(fontSize: 20),),
+                              Text("10 phút trước")
+                            ],
+                          ),
+                        ),
+                        IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz))
+                      ],
+                    ),
                   ),
                 ),
 
