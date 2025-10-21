@@ -189,9 +189,11 @@ class _HomePageState extends State<HomePage>
                   ),
                 ),
               SizedBox(height: 5  ,),
-              ElevatedButton(onPressed: (){}, child: Text("Xem thêm thông báo trước đó"),
+              ElevatedButton(onPressed: (){}, child: Text("Xem thêm thông báo trước đó", style: TextStyle(color: Colors.white),),
                 style: ElevatedButton.styleFrom(
-                  maximumSize: Size(250, 50)
+                  maximumSize: Size(250, 50),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10)),
+                  backgroundColor: Colors.blueAccent,
                 ),
               ),
             ],
