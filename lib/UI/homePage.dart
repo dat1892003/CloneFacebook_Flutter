@@ -139,11 +139,13 @@ class _HomePageState extends State<HomePage>
           buildFriendView(),
           buildGroupView(),
           buildnoti(),
-          Center(child: Text("More Screen")),
+          buildMore(),
         ],
       ),
     );
   }
+
+  SingleChildScrollView buildMore() => SingleChildScrollView(child: Center(child: Text("More Screen")));
 
   SingleChildScrollView buildnoti() {
     return SingleChildScrollView(
