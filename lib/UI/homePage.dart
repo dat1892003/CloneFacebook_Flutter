@@ -145,9 +145,9 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  SingleChildScrollView buildMore() => SingleChildScrollView(child: Center(child: Text("More Screen")));
+  Widget buildMore() => SingleChildScrollView(child: Center(child: Text("More Screen")));
 
-  SingleChildScrollView buildnoti() {
+  Widget buildnoti() {
     return SingleChildScrollView(
           child: Column(
             children: [
