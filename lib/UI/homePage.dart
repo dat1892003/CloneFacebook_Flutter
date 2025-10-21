@@ -188,7 +188,12 @@ class _HomePageState extends State<HomePage>
                     ),
                   ),
                 ),
-              ElevatedButton(onPressed: (){}, child: Text("Xem thêm thông báo trước đó"))
+              SizedBox(height: 5  ,),
+              ElevatedButton(onPressed: (){}, child: Text("Xem thêm thông báo trước đó"),
+                style: ElevatedButton.styleFrom(
+                  maximumSize: Size(250, 50)
+                ),
+              ),
             ],
           ),
         );
