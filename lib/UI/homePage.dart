@@ -158,13 +158,24 @@ class _HomePageState extends State<HomePage>
           ),
           Container(
             width: double.infinity,
-            height: 300,
+            height: 200,
             margin: EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(15), color: Colors.black45),
             child: Column(
               children: [
-                Row(),
+                SizedBox(height: 10,),
+                Row(
+                  children: [
+                    SizedBox(width: 10,),
+                    Icon(Icons.person, size: 40,),
+                    SizedBox(width: 10),
+                    Text("Tên người dùng", style: TextStyle(fontSize: 20),),
+                    Spacer(),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.arrow_drop_down_outlined)),
+                  ],
+                ),
                 Divider(color: Colors.white70,),
+                Row(),
               ],
             ),
           )
