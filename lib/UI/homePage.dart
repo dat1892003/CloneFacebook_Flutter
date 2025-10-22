@@ -150,8 +150,23 @@ class _HomePageState extends State<HomePage>
         children: [
           Row(
             children: [
-              Container(child: Text("Menu",style: TextStyle(fontSize: 20),),)
+              Container(margin: EdgeInsets.only(top: 10,left: 10) ,child: Text("Menu",style: TextStyle(fontSize: 20),),),
+              Spacer(),
+              IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+              IconButton(onPressed: (){}, icon: Icon(Icons.search))
             ],
+          ),
+          Container(
+            width: double.infinity,
+            height: 300,
+            margin: EdgeInsets.only(left: 10, right: 10),
+            decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(15), color: Colors.black45),
+            child: Column(
+              children: [
+                Row(),
+                Divider(color: Colors.white70,),
+              ],
+            ),
           )
         ],
       )
