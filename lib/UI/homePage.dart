@@ -145,7 +145,17 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  Widget buildMore() => SingleChildScrollView(child: Center(child: Text("More Screen")));
+  Widget buildMore() => SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(child: Text("Menu",style: TextStyle(fontSize: 20),),)
+            ],
+          )
+        ],
+      )
+  );
 
   Widget buildnoti() {
     return SingleChildScrollView(
