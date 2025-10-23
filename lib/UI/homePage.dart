@@ -176,7 +176,10 @@ class _HomePageState extends State<HomePage>
                 ),
                 Divider(color: Colors.white70,),
                 Row(
-                  children: [],
+                  children: [
+                    SizedBox(width: 10,),
+                    Icon(Icons.person, size: 40,),
+                  ],
                 ),
               ],
             ),
