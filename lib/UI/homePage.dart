@@ -179,6 +179,12 @@ class _HomePageState extends State<HomePage>
                   children: [
                     SizedBox(width: 10,),
                     IconButton(onPressed: (){}, icon: Icon(Icons.add_box_outlined, size: 40)),
+                    Column(
+                      children: [
+                        Text("Tạo trang cá nhân hoặc trang mới", style: TextStyle(fontSize: 20),),
+                        Text("Chuyển giữa các trang cá nhân mà không cần đăng nhập lại", style: TextStyle(fontSize: 20),),
+                      ],
+                    )
                   ],
                 ),
               ],
