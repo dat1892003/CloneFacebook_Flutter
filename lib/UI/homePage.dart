@@ -147,6 +147,7 @@ class _HomePageState extends State<HomePage>
 
   Widget buildMore() => SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -193,7 +194,12 @@ class _HomePageState extends State<HomePage>
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(height: 5,),
+          Container(
+            margin: EdgeInsets.only(left: 10),
+            child: Text("Lối tắt của bạn", style: TextStyle(fontSize: 18),),
+          ),
         ],
       )
   );
