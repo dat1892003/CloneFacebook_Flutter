@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage>
                 Row(
                   children: [
                     SizedBox(width: 10,),
-                    Icon(Icons.person, size: 40,),
+                    IconButton(onPressed: (){}, icon: Icon(Icons.add_box_outlined, size: 40)),
                   ],
                 ),
               ],
