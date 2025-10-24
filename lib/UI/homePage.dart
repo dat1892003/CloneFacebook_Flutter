@@ -203,18 +203,23 @@ class _HomePageState extends State<HomePage>
           Container(
             margin: EdgeInsets.only(top: 5,left: 10, right: 10),
             width: double.infinity,
-            height: 150,
+            height: 200,
             child: ListView.builder(
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(
-                  margin: EdgeInsets.only(right: 10),
-                  width: 150,
-                  height: 100,
-                  decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(20),
-                    image: DecorationImage(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"), fit: BoxFit.cover)
-                  ),
-                  child: Icon(Icons.group),
+                itemBuilder: (context, index) => Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 10),
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(20),
+                        image: DecorationImage(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"), fit: BoxFit.cover)
+                      ),
+                      child: Icon(Icons.group),
+                    ),
+                    Text("Nhóm ${index+1} của bạn")
+                  ],
                 ),
             ),
           )
