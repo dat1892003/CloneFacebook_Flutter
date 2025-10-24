@@ -203,8 +203,12 @@ class _HomePageState extends State<HomePage>
           Container(
             margin: EdgeInsets.only(top: 5,left: 10, right: 10),
             width: double.infinity,
-            height: 100,
-            color: Colors.blue,
+            height: 150,
+            child: ListView.builder(
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => Container(margin: EdgeInsets.only(right: 5) ,width: 200,height: double.infinity, color: Colors.blue,),
+            ),
           )
         ],
       )
