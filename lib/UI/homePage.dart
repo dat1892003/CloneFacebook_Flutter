@@ -200,6 +200,12 @@ class _HomePageState extends State<HomePage>
             margin: EdgeInsets.only(left: 10),
             child: Text("Lối tắt của bạn", style: TextStyle(fontSize: 18),),
           ),
+          Container(
+            margin: EdgeInsets.only(top: 5,left: 10, right: 10),
+            width: double.infinity,
+            height: 100,
+            color: Colors.blue,
+          )
         ],
       )
   );
