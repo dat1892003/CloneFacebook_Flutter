@@ -207,7 +207,19 @@ class _HomePageState extends State<HomePage>
             child: ListView.builder(
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(margin: EdgeInsets.only(right: 5) ,width: 200,height: double.infinity, color: Colors.blue,),
+                itemBuilder: (context, index) => Container(
+                  margin: EdgeInsets.only(right: 10),
+                  width: 150,
+                  height: 100,
+                  decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(20),
+                    image: DecorationImage(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"), fit: BoxFit.cover)
+                  ),
+                  child: Column(
+                    children: [
+                      Text("nhóm của bạn")
+                    ],
+                  ),
+                ),
             ),
           )
         ],
