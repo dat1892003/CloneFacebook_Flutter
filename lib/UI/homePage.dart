@@ -214,11 +214,7 @@ class _HomePageState extends State<HomePage>
                   decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(20),
                     image: DecorationImage(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"), fit: BoxFit.cover)
                   ),
-                  child: Column(
-                    children: [
-                      Text("nhóm của bạn")
-                    ],
-                  ),
+                  child: Icon(Icons.group),
                 ),
             ),
           )
