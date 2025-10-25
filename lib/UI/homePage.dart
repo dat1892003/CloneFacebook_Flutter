@@ -222,6 +222,7 @@ class _HomePageState extends State<HomePage>
                             alignment: AlignmentGeometry.directional(1, 1),
                             child: CircleAvatar(
                               backgroundColor: Colors.white70,
+                              child: Icon(Icons.group,size: 25,),
                             ),
                           )
                         ],
@@ -232,7 +233,17 @@ class _HomePageState extends State<HomePage>
                 ),
             ),
           ),
-
+        Container(
+          width: double.infinity,
+          child: GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              padding: EdgeInsetsGeometry.directional(start: 10, end: 10),
+              itemCount: 10,
+              scrollDirection: Axis.vertical,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10,mainAxisSpacing: 10,childAspectRatio: 1.5),
+              itemBuilder: (context, index) => Container(width: 50, height: 80, color: Colors.blue,),),
+        )
         ],
       )
   );
