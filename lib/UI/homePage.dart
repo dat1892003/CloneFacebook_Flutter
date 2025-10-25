@@ -239,10 +239,20 @@ class _HomePageState extends State<HomePage>
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               padding: EdgeInsetsGeometry.directional(start: 10, end: 10),
-              itemCount: 10,
+              itemCount: 8,
               scrollDirection: Axis.vertical,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10,mainAxisSpacing: 10,childAspectRatio: 1.5),
-              itemBuilder: (context, index) => Container(width: 50, height: 80, color: Colors.blue,),),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10,mainAxisSpacing: 10,childAspectRatio: 1.75),
+              itemBuilder: (context, index) => ClipRRect(
+                borderRadius: BorderRadiusGeometry.circular(20),
+                clipBehavior: Clip.antiAlias,
+                child: Container(
+                  width: 50, height: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.blueAccent,
+                  ),
+                ),
+              ),
+          ),
         )
         ],
       )
