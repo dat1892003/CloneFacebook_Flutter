@@ -216,13 +216,23 @@ class _HomePageState extends State<HomePage>
                       decoration: BoxDecoration(borderRadius: BorderRadiusGeometry.circular(20),
                         image: DecorationImage(image: NetworkImage("https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-51.jpg"), fit: BoxFit.cover)
                       ),
-                      child: Icon(Icons.group),
+                      child: Stack(
+                        children: [
+                          Align(
+                            alignment: AlignmentGeometry.directional(1, 1),
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white70,
+                            ),
+                          )
+                        ],
+                      )
                     ),
-                    Text("Nhóm ${index+1} của bạn")
+                    Text("Nhóm ${index+1} của bạn"),
                   ],
                 ),
             ),
-          )
+          ),
+
         ],
       )
   );
