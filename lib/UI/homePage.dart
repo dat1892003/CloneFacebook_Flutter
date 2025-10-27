@@ -145,7 +145,10 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  Widget buildMore() => SingleChildScrollView(
+  Widget buildMore()  {
+    List<String> name = ["Nhóm", "Trang", "Kỷ niệm", "Đã lưu", "Thước phim", "Marketphace", "Tìm bạn bè", "Bản feed"];
+    List<Icon> icon = [Icon(Icons.group), Icon(Icons.flag), Icon(Icons.access_alarm), Icon(Icons.)];
+    return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -250,13 +253,14 @@ class _HomePageState extends State<HomePage>
                   decoration: BoxDecoration(
                     color: Colors.blueAccent,
                   ),
+                  child: Text(name[index]),
                 ),
               ),
           ),
         )
         ],
       )
-  );
+  );}
 
   Widget buildnoti() {
     return SingleChildScrollView(
