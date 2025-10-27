@@ -148,14 +148,14 @@ class _HomePageState extends State<HomePage>
   Widget buildMore()  {
     List<String> name = ["Nhóm", "Trang", "Kỷ niệm", "Đã lưu", "Thước phim", "Marketphace", "Tìm bạn bè", "Bản feed"];
     List<Icon> icon = [
-      Icon(Icons.group),
-      Icon(Icons.flag),
-      Icon(Icons.access_alarm),
-      Icon(Icons.bookmark),
-      Icon(Icons.video_library),
-      Icon(Icons.store),
-      Icon(Icons.group_add),
-      Icon(Icons.newspaper),
+      Icon(Icons.groups, size: 35, color: Colors.white,),
+      Icon(Icons.flag, size: 35,color: Colors.orangeAccent,),
+      Icon(Icons.access_alarm, size: 35, color: Colors.white,),
+      Icon(Icons.bookmark, size: 35, color: Colors.pinkAccent,),
+      Icon(Icons.video_library, size: 35, color: Colors.redAccent,),
+      Icon(Icons.store, size: 35, color: Colors.black45,),
+      Icon(Icons.group_add, size: 35,color: Colors.white,),
+      Icon(Icons.newspaper, size: 35, color: Colors.greenAccent,),
     ];
     return SingleChildScrollView(
       child: Column(
@@ -263,7 +263,7 @@ class _HomePageState extends State<HomePage>
                     color: Colors.blueAccent,
                   ),
                   child: Container(
-                    margin: EdgeInsets.only(left: 10,top: 10),
+                    margin: EdgeInsets.only(left: 15,top: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
