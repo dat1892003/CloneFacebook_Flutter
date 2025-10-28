@@ -276,6 +276,11 @@ class _HomePageState extends State<HomePage>
               ),
           ),
         ),
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+            width: double.infinity,
+            child: ElevatedButton(onPressed: (){}, child: Text("Xem thêm", style: TextStyle(color: Colors.black),)),
+          ),
           Divider(),
           ExpansionTile(
             shape: RoundedRectangleBorder(side: BorderSide.none),
