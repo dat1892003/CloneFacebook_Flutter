@@ -276,6 +276,22 @@ class _HomePageState extends State<HomePage>
               ),
           ),
         ),
+          Divider(),
+          ExpansionTile(
+            shape: RoundedRectangleBorder(side: BorderSide.none),
+            title: Row(
+              children: [
+                Icon(Icons.folder),
+                SizedBox(width: 10),
+                Text('Trợ giúp và hỗ trợ'),
+              ],
+            ),
+            children: [
+              ListTile(title: Text('Mục con 1')),
+              ListTile(title: Text('Mục con 2')),
+              ListTile(title: Text('Mục con 3')),
+            ],
+          ),
         ],
       )
   );}
