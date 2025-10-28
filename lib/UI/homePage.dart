@@ -281,15 +281,16 @@ class _HomePageState extends State<HomePage>
             shape: RoundedRectangleBorder(side: BorderSide.none),
             title: Row(
               children: [
-                Icon(Icons.folder),
+                Icon(Icons.help, size: 25,color: Colors.black,),
                 SizedBox(width: 10),
                 Text('Trợ giúp và hỗ trợ'),
               ],
             ),
             children: [
-              ListTile(title: Text('Mục con 1')),
-              ListTile(title: Text('Mục con 2')),
-              ListTile(title: Text('Mục con 3')),
+              ListTile(leading: Icon(Icons.support),title: Text('Trung tâm trợ giúp')),
+              ListTile(leading: Icon(Icons.support),title: Text('Trạng thái tài khoản')),
+              ListTile(leading: Icon(Icons.support),title: Text('Hộp thư hỗ trợ')),
+              ListTile(leading: Icon(Icons.support),title: Text('Báo cáo sự cố')),
             ],
           ),
         ],
