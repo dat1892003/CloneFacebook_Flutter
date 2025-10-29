@@ -300,6 +300,25 @@ class _HomePageState extends State<HomePage>
               ListTile(leading: Icon(FontAwesomeIcons.book),title: Text('Điều khoản và chính sách')),
             ],
           ),
+          Divider(),
+          ExpansionTile(
+            shape: RoundedRectangleBorder(side: BorderSide.none),
+            title: Row(
+              children: [
+                Icon(Icons.help, size: 25,color: Colors.black,),
+                SizedBox(width: 10),
+                Text('Trợ giúp và hỗ trợ'),
+              ],
+            ),
+            children: [
+              ListTile(leading: Icon(Icons.support),title: Text('Trung tâm trợ giúp')),
+              ListTile(leading: Icon(Icons.account_circle),title: Text('Trạng thái tài khoản')),
+              ListTile(leading: Icon(Icons.email),title: Text('Hộp thư hỗ trợ')),
+              ListTile(leading: Icon(Icons.warning),title: Text('Báo cáo sự cố')),
+              ListTile(leading: Icon(Icons.security),title: Text('An toàn')),
+              ListTile(leading: Icon(FontAwesomeIcons.book),title: Text('Điều khoản và chính sách')),
+            ],
+          ),
         ],
       )
   );}
