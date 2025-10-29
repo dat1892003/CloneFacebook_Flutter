@@ -324,9 +324,9 @@ class _HomePageState extends State<HomePage>
             shape: RoundedRectangleBorder(side: BorderSide.none),
             title: Row(
               children: [
-                Icon(Icons.settings, size: 25,color: Colors.black,),
+                Icon(FontAwesomeIcons.list, size: 25,color: Colors.black,),
                 SizedBox(width: 10),
-                Text('Cài đặt và quyền riêng tư'),
+                Text('Cũng từ meta'),
               ],
             ),
             children: [
