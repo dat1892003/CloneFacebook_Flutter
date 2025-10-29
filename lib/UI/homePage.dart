@@ -319,6 +319,25 @@ class _HomePageState extends State<HomePage>
               ListTile(leading: Icon(Icons.link),title: Text('Lịch sử liên kết')),
             ],
           ),
+          Divider(),
+          ExpansionTile(
+            shape: RoundedRectangleBorder(side: BorderSide.none),
+            title: Row(
+              children: [
+                Icon(Icons.settings, size: 25,color: Colors.black,),
+                SizedBox(width: 10),
+                Text('Cài đặt và quyền riêng tư'),
+              ],
+            ),
+            children: [
+              ListTile(leading: Icon(Icons.person),title: Text('Cài đặt')),
+              ListTile(leading: Icon(Icons.lock),title: Text('Trung tâm quền riêng tư')),
+              ListTile(leading: Icon(Icons.phone_iphone),title: Text('Yêu cầu từ thiết bị')),
+              ListTile(leading: Icon(Icons.event_available),title: Text('Hoạt động gần đây và quảng cáo')),
+              ListTile(leading: Icon(Icons.payment),title: Text('Đơn đặt hàng và thanh toán')),
+              ListTile(leading: Icon(Icons.link),title: Text('Lịch sử liên kết')),
+            ],
+          ),
         ],
       )
   );}
