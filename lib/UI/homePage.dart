@@ -339,6 +339,7 @@ class _HomePageState extends State<HomePage>
             ],
           ),
           Container(
+            width: double.infinity,
             margin: EdgeInsets.only(left: 10, right: 10, top: 5),
             child: ElevatedButton(onPressed: (){}, child: Text("Đăng xuất")),
           ),
