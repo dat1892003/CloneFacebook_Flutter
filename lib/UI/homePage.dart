@@ -338,6 +338,7 @@ class _HomePageState extends State<HomePage>
               ListTile(leading: Icon(Icons.whatshot_sharp),title: Text('WhatsApp')),
             ],
           ),
+          ElevatedButton(onPressed: (){}, child: Text("Đăng xuất"))
         ],
       )
   );}
