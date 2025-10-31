@@ -340,8 +340,8 @@ class _HomePageState extends State<HomePage>
           ),
           Container(
             width: double.infinity,
-            height: 70,
-            margin: EdgeInsets.only(left: 10, right: 10, top: 5),
+            height: 40,
+            margin: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
             child: ElevatedButton(onPressed: (){},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueAccent
@@ -349,7 +349,6 @@ class _HomePageState extends State<HomePage>
               child: Text("Đăng xuất",style: TextStyle(color: Colors.white),),
             ),
           ),
-
         ],
       )
   );}
